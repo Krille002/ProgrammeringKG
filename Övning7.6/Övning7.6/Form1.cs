@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Uppgift5._4
+namespace Övning7._6
 {
     public partial class Form1 : Form
     {
@@ -19,16 +19,19 @@ namespace Uppgift5._4
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            string namn1 = textBox1.Text;
+            string namn2 = textBox2.Text;
 
-            int sekunder = int.Parse(textBox1.Text);
-            int timmar = sekunder / (60 * 60);
-            int minuter = (sekunder % (60 * 60)) / 60;
-            int sekunderOver = (sekunder % (60 * 60)) % 60;
+            if (namn1.CompareTo(namn2) < 0)
+            {
 
-            label1.Text = "Timmar: " + timmar;
-            label2.Text = "Minuter: " + minuter;
-            label3.Text = "Sekunder: " + sekunderOver;
+                label3.Text = namn1 + " " + namn2;
+
+            }
+            else
+            {
+                label3.Text = namn2 + " " + namn1;
+            }
         }
     }
 }
- 
