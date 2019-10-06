@@ -34,16 +34,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbxRad1 = new System.Windows.Forms.TextBox();
+            this.tbxRad2 = new System.Windows.Forms.TextBox();
+            this.tbxRad3 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnGenerera = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.lbxMeny = new System.Windows.Forms.ListBox();
+            this.tbxVal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnValj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -100,29 +101,29 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Karisma";
             // 
-            // textBox1
+            // tbxRad1
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 53);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 78);
-            this.textBox1.TabIndex = 6;
+            this.tbxRad1.Location = new System.Drawing.Point(115, 53);
+            this.tbxRad1.Multiline = true;
+            this.tbxRad1.Name = "tbxRad1";
+            this.tbxRad1.Size = new System.Drawing.Size(37, 78);
+            this.tbxRad1.TabIndex = 6;
             // 
-            // textBox2
+            // tbxRad2
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 53);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(37, 78);
-            this.textBox2.TabIndex = 7;
+            this.tbxRad2.Location = new System.Drawing.Point(171, 53);
+            this.tbxRad2.Multiline = true;
+            this.tbxRad2.Name = "tbxRad2";
+            this.tbxRad2.Size = new System.Drawing.Size(37, 78);
+            this.tbxRad2.TabIndex = 7;
             // 
-            // textBox3
+            // tbxRad3
             // 
-            this.textBox3.Location = new System.Drawing.Point(227, 53);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 78);
-            this.textBox3.TabIndex = 8;
+            this.tbxRad3.Location = new System.Drawing.Point(227, 53);
+            this.tbxRad3.Multiline = true;
+            this.tbxRad3.Name = "tbxRad3";
+            this.tbxRad3.Size = new System.Drawing.Size(37, 78);
+            this.tbxRad3.TabIndex = 8;
             // 
             // label7
             // 
@@ -153,28 +154,32 @@
             // 
             // btnGenerera
             // 
-            this.btnGenerera.Location = new System.Drawing.Point(115, 183);
+            this.btnGenerera.Location = new System.Drawing.Point(115, 153);
             this.btnGenerera.Name = "btnGenerera";
             this.btnGenerera.Size = new System.Drawing.Size(149, 23);
             this.btnGenerera.TabIndex = 12;
             this.btnGenerera.Text = "Generera";
             this.btnGenerera.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lbxMeny
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(300, 88);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(48, 43);
-            this.listBox1.TabIndex = 13;
+            this.lbxMeny.FormattingEnabled = true;
+            this.lbxMeny.Items.AddRange(new object[] {
+            "Rad 1",
+            "Rad 2",
+            "Rad 3"});
+            this.lbxMeny.Location = new System.Drawing.Point(300, 88);
+            this.lbxMeny.Name = "lbxMeny";
+            this.lbxMeny.Size = new System.Drawing.Size(48, 43);
+            this.lbxMeny.TabIndex = 13;
             // 
-            // textBox5
+            // tbxVal
             // 
-            this.textBox5.Location = new System.Drawing.Point(400, 53);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(37, 78);
-            this.textBox5.TabIndex = 15;
+            this.tbxVal.Location = new System.Drawing.Point(400, 53);
+            this.tbxVal.Multiline = true;
+            this.tbxVal.Name = "tbxVal";
+            this.tbxVal.Size = new System.Drawing.Size(37, 78);
+            this.tbxVal.TabIndex = 15;
             // 
             // label10
             // 
@@ -185,21 +190,31 @@
             this.label10.TabIndex = 16;
             this.label10.Text = "Val";
             // 
+            // btnValj
+            // 
+            this.btnValj.Location = new System.Drawing.Point(300, 153);
+            this.btnValj.Name = "btnValj";
+            this.btnValj.Size = new System.Drawing.Size(48, 23);
+            this.btnValj.TabIndex = 17;
+            this.btnValj.Text = "Välj";
+            this.btnValj.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 426);
+            this.ClientSize = new System.Drawing.Size(485, 224);
+            this.Controls.Add(this.btnValj);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.tbxVal);
+            this.Controls.Add(this.lbxMeny);
             this.Controls.Add(this.btnGenerera);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbxRad3);
+            this.Controls.Add(this.tbxRad2);
+            this.Controls.Add(this.tbxRad1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -221,16 +236,17 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbxRad1;
+        private System.Windows.Forms.TextBox tbxRad2;
+        private System.Windows.Forms.TextBox tbxRad3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnGenerera;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ListBox lbxMeny;
+        private System.Windows.Forms.TextBox tbxVal;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnValj;
     }
 }
 
