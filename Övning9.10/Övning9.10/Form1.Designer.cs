@@ -106,7 +106,7 @@
             this.tbxRad1.Location = new System.Drawing.Point(115, 53);
             this.tbxRad1.Multiline = true;
             this.tbxRad1.Name = "tbxRad1";
-            this.tbxRad1.Size = new System.Drawing.Size(37, 78);
+            this.tbxRad1.Size = new System.Drawing.Size(37, 94);
             this.tbxRad1.TabIndex = 6;
             // 
             // tbxRad2
@@ -114,7 +114,7 @@
             this.tbxRad2.Location = new System.Drawing.Point(171, 53);
             this.tbxRad2.Multiline = true;
             this.tbxRad2.Name = "tbxRad2";
-            this.tbxRad2.Size = new System.Drawing.Size(37, 78);
+            this.tbxRad2.Size = new System.Drawing.Size(37, 94);
             this.tbxRad2.TabIndex = 7;
             // 
             // tbxRad3
@@ -122,7 +122,7 @@
             this.tbxRad3.Location = new System.Drawing.Point(227, 53);
             this.tbxRad3.Multiline = true;
             this.tbxRad3.Name = "tbxRad3";
-            this.tbxRad3.Size = new System.Drawing.Size(37, 78);
+            this.tbxRad3.Size = new System.Drawing.Size(37, 94);
             this.tbxRad3.TabIndex = 8;
             // 
             // label7
@@ -154,12 +154,13 @@
             // 
             // btnGenerera
             // 
-            this.btnGenerera.Location = new System.Drawing.Point(115, 153);
+            this.btnGenerera.Location = new System.Drawing.Point(115, 165);
             this.btnGenerera.Name = "btnGenerera";
             this.btnGenerera.Size = new System.Drawing.Size(149, 23);
             this.btnGenerera.TabIndex = 12;
             this.btnGenerera.Text = "Generera";
             this.btnGenerera.UseVisualStyleBackColor = true;
+            this.btnGenerera.Click += new System.EventHandler(this.BtnGenerera_Click);
             // 
             // lbxMeny
             // 
@@ -168,23 +169,24 @@
             "Rad 1",
             "Rad 2",
             "Rad 3"});
-            this.lbxMeny.Location = new System.Drawing.Point(300, 88);
+            this.lbxMeny.Location = new System.Drawing.Point(284, 104);
             this.lbxMeny.Name = "lbxMeny";
             this.lbxMeny.Size = new System.Drawing.Size(48, 43);
             this.lbxMeny.TabIndex = 13;
+            this.lbxMeny.SelectedIndexChanged += new System.EventHandler(this.LbxMeny_SelectedIndexChanged);
             // 
             // tbxVal
             // 
-            this.tbxVal.Location = new System.Drawing.Point(400, 53);
+            this.tbxVal.Location = new System.Drawing.Point(355, 53);
             this.tbxVal.Multiline = true;
             this.tbxVal.Name = "tbxVal";
-            this.tbxVal.Size = new System.Drawing.Size(37, 78);
+            this.tbxVal.Size = new System.Drawing.Size(37, 135);
             this.tbxVal.TabIndex = 15;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(406, 27);
+            this.label10.Location = new System.Drawing.Point(361, 27);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(22, 13);
             this.label10.TabIndex = 16;
@@ -192,12 +194,13 @@
             // 
             // btnValj
             // 
-            this.btnValj.Location = new System.Drawing.Point(300, 153);
+            this.btnValj.Location = new System.Drawing.Point(284, 165);
             this.btnValj.Name = "btnValj";
             this.btnValj.Size = new System.Drawing.Size(48, 23);
             this.btnValj.TabIndex = 17;
             this.btnValj.Text = "Välj";
             this.btnValj.UseVisualStyleBackColor = true;
+            this.btnValj.Click += new System.EventHandler(this.BtnValj_Click);
             // 
             // Form1
             // 
