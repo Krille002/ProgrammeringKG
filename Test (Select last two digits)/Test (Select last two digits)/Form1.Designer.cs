@@ -40,7 +40,6 @@
             this.tbxTal.Name = "tbxTal";
             this.tbxTal.Size = new System.Drawing.Size(100, 20);
             this.tbxTal.TabIndex = 0;
-            //this.tbxTal.TextChanged += new System.EventHandler(this.TbxTal_TextChanged);
             // 
             // lblTal_No_Touch
             // 
@@ -74,7 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(582, 227);
             this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.lblSvar);
             this.Controls.Add(this.lblTal_No_Touch);
