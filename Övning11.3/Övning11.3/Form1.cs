@@ -12,13 +12,13 @@ namespace Övning11._2
 {
     public partial class Form1 : Form
     {
-        Maltavla mal = new Maltavla();
+        Maltavla mal = new Maltavla(0, 0, 30);
         public Form1()
         {
             InitializeComponent();
-            mal.x = ClientSize.Width / 2;
-            mal.y = ClientSize.Height / 2;
-            mal.radie = 30;
+            mal.X = ClientSize.Width / 2;
+            mal.Y = ClientSize.Height / 2;
+            mal.Radie = 30;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -27,9 +27,9 @@ namespace Övning11._2
             mal.Rita(g);
         }
 
-        private void btnRadie_Click(object sender, EventArgs e)
+        private void BtnRadie_Click_1(object sender, EventArgs e)
         {
-            mal.radie = int.Parse(tbxRadie.Text);
+            mal.Radie = int.Parse(tbxRadie.Text);
             Invalidate();
         }
     }

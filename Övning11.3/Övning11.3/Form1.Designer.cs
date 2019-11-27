@@ -40,6 +40,7 @@
             this.btnRadie.TabIndex = 0;
             this.btnRadie.Text = "Sätt Radie";
             this.btnRadie.UseVisualStyleBackColor = true;
+            this.btnRadie.Click += new System.EventHandler(this.BtnRadie_Click_1);
             // 
             // tbxRadie
             // 
