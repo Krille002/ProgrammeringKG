@@ -61,7 +61,7 @@ namespace Övning11._6
 
             if (pilarKvar > 0)
             {
-                
+                //Felet var att jag skrivit "skjutnaPilar++;" på denna rad. Och använt "[skjutnaPilar]" på nästa
                 traff[skjutnaPilar++] = new Markor(e.X, e.Y, 6);
                 Invalidate();
 
