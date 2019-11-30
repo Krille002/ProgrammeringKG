@@ -40,7 +40,7 @@ namespace Övning11._6
             mal.Rita(e.Graphics);
             sikte.Rita(e.Graphics);
 
-            for (int i = 0; i > 0; i++)
+            for (int i = 0; i < skjutnaPilar; i++)
             {
                 if (traff[i] != null) traff[i].Rita(e.Graphics);
             }
@@ -61,8 +61,8 @@ namespace Övning11._6
 
             if (pilarKvar > 0)
             {
-                skjutnaPilar++;
-                traff[skjutnaPilar] = new Markor(e.X, e.Y, 6);
+                
+                traff[skjutnaPilar++] = new Markor(e.X, e.Y, 6);
                 Invalidate();
 
                 
