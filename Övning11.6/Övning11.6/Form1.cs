@@ -57,16 +57,15 @@ namespace Övning11._6
         //Sätta markör där man skjuter (klickar) när man släpper musknappen
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            pilarKvar = 5 - skjutnaPilar;
 
-            if (pilarKvar > 0)
+            if (pilarKvar > 0 && skjutnaPilar < 5)
             {
                 //Felet var att jag skrivit "skjutnaPilar++;" på denna rad. Och använt "[skjutnaPilar]" på nästa
                 traff[skjutnaPilar++] = new Markor(e.X, e.Y, 6);
                 Invalidate();
 
                 
-                lblPilar.Text = pilarKvar.ToString();
+                lblPilar.Text = (5 - skjutnaPilar).ToString();
             }
             else
             {
