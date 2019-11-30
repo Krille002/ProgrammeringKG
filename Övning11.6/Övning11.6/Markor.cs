@@ -17,9 +17,12 @@ namespace Övning11._6
         //Storlek är distans från yttre kant av kryss, till mitten av krysset. (Typ radie av krysset)
         private int storlek;
 
+
+        /*
         //Starta arrays för for-loop för att rita tidigare kryss
         int[] listaX;
         int[] listaY;
+        */
         
 
         //Konstruktor för att ta in värden
@@ -66,6 +69,7 @@ namespace Övning11._6
             g.DrawLine(traff, _x - storlek, _y - storlek, _x + storlek, _y + storlek);
             g.DrawLine(traff, _x + storlek, _y - storlek, _x - storlek, _y + storlek);
 
+            
             /*
             //Lagra och rita punkter från tidigare klick
             for (int i = 0; i < 4; i++)

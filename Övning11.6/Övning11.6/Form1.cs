@@ -14,9 +14,10 @@ namespace Övning11._6
     {
         Maltavla mal;
         Sikte sikte;
-        Markor traff;
+        Markor[] traff;
 
-        int pilar = 5;
+        int pilarKvar = 5;
+        int skjutnaPilar = 0;
 
         public Form1()
         {
@@ -26,8 +27,11 @@ namespace Övning11._6
             mal = new Maltavla(ClientSize.Width / 2, ClientSize.Height / 2, 60);
             sikte = new Sikte(ClientSize.Width / 2, ClientSize.Height / 2);
 
+            //Gör så att det kan finnas 6 "upplagor" av "traff" objektet
+            traff = new Markor[5];
+
             //Skriva startvärde till label för antal pilar kvar
-            lblPilar.Text = pilar.ToString();
+            lblPilar.Text = pilarKvar.ToString();
         }
 
         //Bifoga graphics till klasser för att rita
@@ -36,7 +40,10 @@ namespace Övning11._6
             mal.Rita(e.Graphics);
             sikte.Rita(e.Graphics);
 
-            if (traff != null) traff.Rita(e.Graphics);
+            for (int i = 0; i > 0; i++)
+            {
+                if (traff[i] != null) traff[i].Rita(e.Graphics);
+            }
         }
 
         //Rita sikte där muspekaren befinner sig
@@ -50,20 +57,21 @@ namespace Övning11._6
         //Sätta markör där man skjuter (klickar) när man släpper musknappen
         protected override void OnMouseUp(MouseEventArgs e)
         {
-            if (pilar > 0)
+            pilarKvar = 5 - skjutnaPilar;
+
+            if (pilarKvar > 0)
             {
-                traff = new Markor(e.X, e.Y, 6);
+                skjutnaPilar++;
+                traff[skjutnaPilar] = new Markor(e.X, e.Y, 6);
                 Invalidate();
 
-                pilar -= 1;
-                lblPilar.Text = pilar.ToString();
+                
+                lblPilar.Text = pilarKvar.ToString();
             }
             else
             {
                 lblPilar.Text = "Du har inga pilar kvar";
             }
-
-
 
 
         }
