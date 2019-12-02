@@ -20,7 +20,6 @@ namespace Uppgift11._1_och_11._2
         string _fornamn;
         string _efternamn;
         string _telefon;
-        int raknare;
 
         public Form1()
         {
