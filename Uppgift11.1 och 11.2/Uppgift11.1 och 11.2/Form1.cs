@@ -13,17 +13,21 @@ namespace Uppgift11._1_och_11._2
     public partial class Form1 : Form
     {
 
-        Kontakt[] kontaktlista ;
+        Kontakt[] kontaktlista;
 
         //Variabler
 
         string _fornamn;
         string _efternamn;
         string _telefon;
+        int raknare = 0;
+        
 
         public Form1()
         {
             InitializeComponent();
+
+            kontaktlista = new Kontakt[99];
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -32,16 +36,15 @@ namespace Uppgift11._1_och_11._2
             _efternamn = tbxEfternamn.Text;
             _telefon = tbxTelefon.Text;
 
-            if (kontaktlista != null && kontaktlista.Length < 100)
+           
+            if ( raknare < 100)
             {
-                kontaktlista[kontaktlista.Length] = new Kontakt(_fornamn, _efternamn, _telefon);
+                kontaktlista[raknare++] = new Kontakt(_fornamn, _efternamn, _telefon);
             }
             else
             {
-                MessageBox.Show("Inmatningsfel. Är kontaktlistan full? (100 platser)", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Inmatningsfel. Är kontaktlistan full?", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            
 
 
         }
