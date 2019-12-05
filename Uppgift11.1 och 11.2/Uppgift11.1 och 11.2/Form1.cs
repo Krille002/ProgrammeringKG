@@ -28,6 +28,7 @@ namespace Uppgift11._1_och_11._2
             InitializeComponent();
 
             kontaktlista = new Kontakt[99];
+            this.Text = "Hentai!";
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -39,6 +40,10 @@ namespace Uppgift11._1_och_11._2
            
             if ( raknare < 100)
             {
+                Kontakt k = new Kontakt(_fornamn, _efternamn, _telefon);
+                kontaktlista[raknare++] = k;
+                lbxLista.Items.Add(k);
+
                 kontaktlista[raknare++] = new Kontakt(_fornamn, _efternamn, _telefon);
             }
             else
