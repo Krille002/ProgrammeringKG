@@ -88,24 +88,27 @@
             // rbtnFornamnForst
             // 
             this.rbtnFornamnForst.AutoSize = true;
+            this.rbtnFornamnForst.Checked = true;
             this.rbtnFornamnForst.Location = new System.Drawing.Point(36, 372);
             this.rbtnFornamnForst.Name = "rbtnFornamnForst";
-            this.rbtnFornamnForst.Size = new System.Drawing.Size(85, 17);
+            this.rbtnFornamnForst.Size = new System.Drawing.Size(92, 17);
             this.rbtnFornamnForst.TabIndex = 5;
             this.rbtnFornamnForst.TabStop = true;
-            this.rbtnFornamnForst.Text = "radioButton1";
+            this.rbtnFornamnForst.Text = "Förnamn Först";
             this.rbtnFornamnForst.UseVisualStyleBackColor = true;
+            this.rbtnFornamnForst.CheckedChanged += new System.EventHandler(this.rbtnFornamnForst_CheckedChanged);
             // 
             // rbtnEfternamnForst
             // 
             this.rbtnEfternamnForst.AutoSize = true;
             this.rbtnEfternamnForst.Location = new System.Drawing.Point(188, 372);
             this.rbtnEfternamnForst.Name = "rbtnEfternamnForst";
-            this.rbtnEfternamnForst.Size = new System.Drawing.Size(85, 17);
+            this.rbtnEfternamnForst.Size = new System.Drawing.Size(99, 17);
             this.rbtnEfternamnForst.TabIndex = 6;
             this.rbtnEfternamnForst.TabStop = true;
-            this.rbtnEfternamnForst.Text = "radioButton2";
+            this.rbtnEfternamnForst.Text = "Efternamn Först";
             this.rbtnEfternamnForst.UseVisualStyleBackColor = true;
+            this.rbtnEfternamnForst.CheckedChanged += new System.EventHandler(this.rbtnEfternamnForst_CheckedChanged);
             // 
             // tbxFornamn
             // 

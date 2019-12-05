@@ -72,10 +72,19 @@ namespace Uppgift11._1_och_11._2
 
         //Metoder
 
+            //Förnamn först
         public override string ToString()
         {
             return this.fornamn + " " + this.efternamn + " " + this.telefon;
         }
+
+            //Efternamn först
+
+        public string EfternamnForst()
+        {
+            return this.efternamn + " " + this.fornamn + " " + this.telefon;
+        }
+
 
     }
 }
