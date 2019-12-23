@@ -44,7 +44,11 @@ namespace Övning12._3
                     {
                         int rand = random.Next(1, 10000);
                         lista[i] = rand;
-                        tbxLista.AppendText(i + ", " + rand + "\r\n");
+
+                        if(cbxDebug.Checked == true)
+                        {
+                            tbxLista.AppendText(i + ", " + rand + "\r\n");
+                        }
                     }
 
                     btnSok.Enabled = true;
@@ -180,7 +184,9 @@ namespace Övning12._3
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

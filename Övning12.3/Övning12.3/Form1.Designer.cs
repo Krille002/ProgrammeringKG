@@ -38,6 +38,7 @@
             this.btnGenerera = new System.Windows.Forms.Button();
             this.btnSok = new System.Windows.Forms.Button();
             this.tbxLista = new System.Windows.Forms.TextBox();
+            this.cbxDebug = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbxAntal
@@ -133,11 +134,22 @@
             this.tbxLista.Size = new System.Drawing.Size(168, 417);
             this.tbxLista.TabIndex = 9;
             // 
+            // cbxDebug
+            // 
+            this.cbxDebug.AutoSize = true;
+            this.cbxDebug.Location = new System.Drawing.Point(12, 412);
+            this.cbxDebug.Name = "cbxDebug";
+            this.cbxDebug.Size = new System.Drawing.Size(58, 17);
+            this.cbxDebug.TabIndex = 10;
+            this.cbxDebug.Text = "Debug";
+            this.cbxDebug.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 441);
+            this.Controls.Add(this.cbxDebug);
             this.Controls.Add(this.tbxLista);
             this.Controls.Add(this.btnSok);
             this.Controls.Add(this.btnGenerera);
@@ -150,6 +162,7 @@
             this.Controls.Add(this.tbxAntal);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,6 +180,7 @@
         private System.Windows.Forms.Button btnGenerera;
         private System.Windows.Forms.Button btnSok;
         private System.Windows.Forms.TextBox tbxLista;
+        private System.Windows.Forms.CheckBox cbxDebug;
     }
 }
 
