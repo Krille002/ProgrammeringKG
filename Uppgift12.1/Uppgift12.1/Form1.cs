@@ -114,8 +114,12 @@ namespace Uppgift12._1
 
                 while (i <= 4 && lista[i] > jamforelsetal)
                 {
-                    lista[i - 1] = lista[i];
-                    i--;
+                    if(i >= 0)                                //Är detta nödvändigt? kraschade utan
+                    {
+                        lista[i - 1] = lista[i];
+                        i--;
+                    }
+
                 }
 
                 lista[i - 1] = jamforelsetal;
