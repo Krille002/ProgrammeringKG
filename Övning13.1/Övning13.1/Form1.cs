@@ -28,8 +28,8 @@ namespace Övning13._1
                 for(int kolumn = 0; kolumn < 4; kolumn++)
                 {
                     //Skapa värden
-                    int x = 10 + 100 * rad;
-                    int y = 10 + 100 * kolumn;
+                    int x = 12 + 100 * rad;
+                    int y = 12 + 100 * kolumn;
                     int hojd = 50;
                     int bredd = 75;
 
