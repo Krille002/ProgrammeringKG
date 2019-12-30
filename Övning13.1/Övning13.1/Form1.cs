@@ -68,8 +68,8 @@ namespace Övning13._1
                 SolidBrush brushTillText = new SolidBrush(Color.Blue);
 
                 //Plats
-                int x = 50;
-                int y = 50;
+                int x = 200;
+                int y = 100;
 
                 //Rita text till skärm
                 g.DrawString(text, Font, brushTillText, x, y);
@@ -82,7 +82,35 @@ namespace Övning13._1
 
         protected override void OnMouseClick(MouseEventArgs e)
         {
-            
+            bool traff = false;
+            int musX = e.X;
+            int musY = e.Y;
+
+            //Gå igenom alla rektanglar till träff hittas
+            for (int i = 0; i < rektanglar.Count && !traff; i++)
+            {
+
+                //Kolla efter träff på varje
+                Rektangel temporarRektangel3 = rektanglar.ElementAt(i);
+                traff = temporarRektangel3.Traffad(musX, musY);
+
+                //Radera träffad rektangel
+                if (traff)
+                {
+                    rektanglar.RemoveAt(i);
+                }
+            }
+
+            //Spelet slut vid noll rektanglar kvar
+
+            if (rektanglar.Count == 0)
+            {
+                speletSlut = true;
+            }
+
+            //Invalidate. Rita om fönster
+            Invalidate();
+
         }
 
 

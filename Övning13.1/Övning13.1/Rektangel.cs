@@ -86,9 +86,20 @@ namespace Övning13._1
 
         }
 
-        public bool Träffad(int musX, int musY)
+        public bool Traffad(int klassMusX, int klassMusY)
         {
+            bool traff = false;
+
             //Kolla om muspekare är i någon rektangel
+            if(klassMusX <= x+75 && klassMusX >= x)
+            {
+                if(klassMusY <= y+50 && klassMusY >= y)
+                {
+                    traff = true;
+                }
+            }
+
+            return traff;
         }
     }
 }
