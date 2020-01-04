@@ -31,7 +31,7 @@ namespace Övning14._1
         private int Fakultet (int tal)
         {
             //svar startar som 0
-            int svar = 0;
+            int svar;
 
 
             //Fakultet uträkning
