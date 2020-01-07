@@ -50,9 +50,12 @@ namespace Uppgift14._5
             //Plats på värde är från början odefinerat (-1)
             //mitt skapas varje gång metoden kallas
             int plats = -1;
-            int mitt = (max + min) / 2;
 
-            if(mitt == max || mitt == min)
+            //Ej avrundat mitt
+            double ejAvrundadMitt = ((max + min) / 2f) + 0.5;
+            int mitt = (int)ejAvrundadMitt; //Lägger till 0.5 för att i princip runda uppåt ifall talet blir något med 0.5
+
+            if(mitt == max && mitt == min)
             {
                 svar = mitt;
             }
