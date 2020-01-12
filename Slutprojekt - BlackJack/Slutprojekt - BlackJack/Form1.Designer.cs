@@ -31,30 +31,52 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnHit = new System.Windows.Forms.Button();
             this.btnStand = new System.Windows.Forms.Button();
-            this.pbxKort1 = new System.Windows.Forms.PictureBox();
+            this.pbxCard1 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbxKort2 = new System.Windows.Forms.PictureBox();
+            this.pbxCard2 = new System.Windows.Forms.PictureBox();
             this.pnlYourCards = new System.Windows.Forms.Panel();
-            this.pbxKort3 = new System.Windows.Forms.PictureBox();
-            this.pbxKort4 = new System.Windows.Forms.PictureBox();
-            this.pbxKort5 = new System.Windows.Forms.PictureBox();
-            this.pbxKort6 = new System.Windows.Forms.PictureBox();
-            this.pbxKort7 = new System.Windows.Forms.PictureBox();
-            this.pbxKort8 = new System.Windows.Forms.PictureBox();
-            this.pbxKort9 = new System.Windows.Forms.PictureBox();
-            this.pbxKort10 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort1)).BeginInit();
+            this.pbxCard3 = new System.Windows.Forms.PictureBox();
+            this.pbxCard4 = new System.Windows.Forms.PictureBox();
+            this.pbxCard5 = new System.Windows.Forms.PictureBox();
+            this.pbxCard6 = new System.Windows.Forms.PictureBox();
+            this.pbxCard7 = new System.Windows.Forms.PictureBox();
+            this.pbxCard8 = new System.Windows.Forms.PictureBox();
+            this.pbxCard9 = new System.Windows.Forms.PictureBox();
+            this.pbxCard10 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pbxOpponent1 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent2 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent3 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent4 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent5 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent6 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent7 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent8 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent9 = new System.Windows.Forms.PictureBox();
+            this.pbxOpponent10 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).BeginInit();
             this.pnlYourCards.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard10)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent10)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -85,15 +107,15 @@
             this.btnStand.Text = "Stand";
             this.btnStand.UseVisualStyleBackColor = true;
             // 
-            // pbxKort1
+            // pbxCard1
             // 
-            this.pbxKort1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort1.Location = new System.Drawing.Point(10, 16);
-            this.pbxKort1.Name = "pbxKort1";
-            this.pbxKort1.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort1.TabIndex = 4;
-            this.pbxKort1.TabStop = false;
+            this.pbxCard1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard1.Location = new System.Drawing.Point(10, 16);
+            this.pbxCard1.Name = "pbxCard1";
+            this.pbxCard1.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard1.TabIndex = 4;
+            this.pbxCard1.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -104,118 +126,236 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // pbxKort2
+            // pbxCard2
             // 
-            this.pbxKort2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort2.Location = new System.Drawing.Point(85, 16);
-            this.pbxKort2.Name = "pbxKort2";
-            this.pbxKort2.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort2.TabIndex = 5;
-            this.pbxKort2.TabStop = false;
+            this.pbxCard2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard2.Location = new System.Drawing.Point(85, 16);
+            this.pbxCard2.Name = "pbxCard2";
+            this.pbxCard2.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard2.TabIndex = 5;
+            this.pbxCard2.TabStop = false;
             // 
             // pnlYourCards
             // 
-            this.pnlYourCards.Controls.Add(this.pbxKort1);
-            this.pnlYourCards.Controls.Add(this.pbxKort2);
-            this.pnlYourCards.Controls.Add(this.pbxKort3);
-            this.pnlYourCards.Controls.Add(this.pbxKort4);
-            this.pnlYourCards.Controls.Add(this.pbxKort5);
-            this.pnlYourCards.Controls.Add(this.pbxKort6);
-            this.pnlYourCards.Controls.Add(this.pbxKort7);
-            this.pnlYourCards.Controls.Add(this.pbxKort8);
-            this.pnlYourCards.Controls.Add(this.pbxKort9);
-            this.pnlYourCards.Controls.Add(this.pbxKort10);
+            this.pnlYourCards.Controls.Add(this.pbxCard1);
+            this.pnlYourCards.Controls.Add(this.pbxCard2);
+            this.pnlYourCards.Controls.Add(this.pbxCard3);
+            this.pnlYourCards.Controls.Add(this.pbxCard4);
+            this.pnlYourCards.Controls.Add(this.pbxCard5);
+            this.pnlYourCards.Controls.Add(this.pbxCard6);
+            this.pnlYourCards.Controls.Add(this.pbxCard7);
+            this.pnlYourCards.Controls.Add(this.pbxCard8);
+            this.pnlYourCards.Controls.Add(this.pbxCard9);
+            this.pnlYourCards.Controls.Add(this.pbxCard10);
             this.pnlYourCards.Location = new System.Drawing.Point(168, 460);
             this.pnlYourCards.Name = "pnlYourCards";
             this.pnlYourCards.Size = new System.Drawing.Size(794, 189);
             this.pnlYourCards.TabIndex = 6;
             // 
-            // pbxKort3
+            // pbxCard3
             // 
-            this.pbxKort3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort3.Location = new System.Drawing.Point(160, 16);
-            this.pbxKort3.Name = "pbxKort3";
-            this.pbxKort3.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort3.TabIndex = 6;
-            this.pbxKort3.TabStop = false;
+            this.pbxCard3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard3.Location = new System.Drawing.Point(160, 16);
+            this.pbxCard3.Name = "pbxCard3";
+            this.pbxCard3.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard3.TabIndex = 6;
+            this.pbxCard3.TabStop = false;
             // 
-            // pbxKort4
+            // pbxCard4
             // 
-            this.pbxKort4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort4.Location = new System.Drawing.Point(235, 16);
-            this.pbxKort4.Name = "pbxKort4";
-            this.pbxKort4.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort4.TabIndex = 7;
-            this.pbxKort4.TabStop = false;
+            this.pbxCard4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard4.Location = new System.Drawing.Point(235, 16);
+            this.pbxCard4.Name = "pbxCard4";
+            this.pbxCard4.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard4.TabIndex = 7;
+            this.pbxCard4.TabStop = false;
             // 
-            // pbxKort5
+            // pbxCard5
             // 
-            this.pbxKort5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort5.Location = new System.Drawing.Point(310, 16);
-            this.pbxKort5.Name = "pbxKort5";
-            this.pbxKort5.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort5.TabIndex = 8;
-            this.pbxKort5.TabStop = false;
+            this.pbxCard5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard5.Location = new System.Drawing.Point(310, 16);
+            this.pbxCard5.Name = "pbxCard5";
+            this.pbxCard5.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard5.TabIndex = 8;
+            this.pbxCard5.TabStop = false;
             // 
-            // pbxKort6
+            // pbxCard6
             // 
-            this.pbxKort6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort6.Location = new System.Drawing.Point(385, 16);
-            this.pbxKort6.Name = "pbxKort6";
-            this.pbxKort6.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort6.TabIndex = 9;
-            this.pbxKort6.TabStop = false;
+            this.pbxCard6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard6.Location = new System.Drawing.Point(385, 16);
+            this.pbxCard6.Name = "pbxCard6";
+            this.pbxCard6.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard6.TabIndex = 9;
+            this.pbxCard6.TabStop = false;
             // 
-            // pbxKort7
+            // pbxCard7
             // 
-            this.pbxKort7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort7.Location = new System.Drawing.Point(460, 16);
-            this.pbxKort7.Name = "pbxKort7";
-            this.pbxKort7.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort7.TabIndex = 10;
-            this.pbxKort7.TabStop = false;
+            this.pbxCard7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard7.Location = new System.Drawing.Point(460, 16);
+            this.pbxCard7.Name = "pbxCard7";
+            this.pbxCard7.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard7.TabIndex = 10;
+            this.pbxCard7.TabStop = false;
             // 
-            // pbxKort8
+            // pbxCard8
             // 
-            this.pbxKort8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort8.Location = new System.Drawing.Point(535, 16);
-            this.pbxKort8.Name = "pbxKort8";
-            this.pbxKort8.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort8.TabIndex = 11;
-            this.pbxKort8.TabStop = false;
+            this.pbxCard8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard8.Location = new System.Drawing.Point(535, 16);
+            this.pbxCard8.Name = "pbxCard8";
+            this.pbxCard8.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard8.TabIndex = 11;
+            this.pbxCard8.TabStop = false;
             // 
-            // pbxKort9
+            // pbxCard9
             // 
-            this.pbxKort9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort9.Location = new System.Drawing.Point(610, 16);
-            this.pbxKort9.Name = "pbxKort9";
-            this.pbxKort9.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort9.TabIndex = 12;
-            this.pbxKort9.TabStop = false;
+            this.pbxCard9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard9.Location = new System.Drawing.Point(610, 16);
+            this.pbxCard9.Name = "pbxCard9";
+            this.pbxCard9.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard9.TabIndex = 12;
+            this.pbxCard9.TabStop = false;
             // 
-            // pbxKort10
+            // pbxCard10
             // 
-            this.pbxKort10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbxKort10.Location = new System.Drawing.Point(685, 16);
-            this.pbxKort10.Name = "pbxKort10";
-            this.pbxKort10.Size = new System.Drawing.Size(100, 150);
-            this.pbxKort10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxKort10.TabIndex = 13;
-            this.pbxKort10.TabStop = false;
+            this.pbxCard10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxCard10.Location = new System.Drawing.Point(685, 16);
+            this.pbxCard10.Name = "pbxCard10";
+            this.pbxCard10.Size = new System.Drawing.Size(100, 150);
+            this.pbxCard10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxCard10.TabIndex = 13;
+            this.pbxCard10.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pbxOpponent1);
+            this.panel1.Controls.Add(this.pbxOpponent2);
+            this.panel1.Controls.Add(this.pbxOpponent3);
+            this.panel1.Controls.Add(this.pbxOpponent4);
+            this.panel1.Controls.Add(this.pbxOpponent5);
+            this.panel1.Controls.Add(this.pbxOpponent6);
+            this.panel1.Controls.Add(this.pbxOpponent7);
+            this.panel1.Controls.Add(this.pbxOpponent8);
+            this.panel1.Controls.Add(this.pbxOpponent9);
+            this.panel1.Controls.Add(this.pbxOpponent10);
+            this.panel1.Location = new System.Drawing.Point(168, 119);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(794, 189);
+            this.panel1.TabIndex = 7;
+            // 
+            // pbxOpponent1
+            // 
+            this.pbxOpponent1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent1.Location = new System.Drawing.Point(10, 16);
+            this.pbxOpponent1.Name = "pbxOpponent1";
+            this.pbxOpponent1.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent1.TabIndex = 4;
+            this.pbxOpponent1.TabStop = false;
+            // 
+            // pbxOpponent2
+            // 
+            this.pbxOpponent2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent2.Location = new System.Drawing.Point(85, 16);
+            this.pbxOpponent2.Name = "pbxOpponent2";
+            this.pbxOpponent2.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent2.TabIndex = 5;
+            this.pbxOpponent2.TabStop = false;
+            // 
+            // pbxOpponent3
+            // 
+            this.pbxOpponent3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent3.Location = new System.Drawing.Point(160, 16);
+            this.pbxOpponent3.Name = "pbxOpponent3";
+            this.pbxOpponent3.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent3.TabIndex = 6;
+            this.pbxOpponent3.TabStop = false;
+            // 
+            // pbxOpponent4
+            // 
+            this.pbxOpponent4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent4.Location = new System.Drawing.Point(235, 16);
+            this.pbxOpponent4.Name = "pbxOpponent4";
+            this.pbxOpponent4.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent4.TabIndex = 7;
+            this.pbxOpponent4.TabStop = false;
+            // 
+            // pbxOpponent5
+            // 
+            this.pbxOpponent5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent5.Location = new System.Drawing.Point(310, 16);
+            this.pbxOpponent5.Name = "pbxOpponent5";
+            this.pbxOpponent5.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent5.TabIndex = 8;
+            this.pbxOpponent5.TabStop = false;
+            // 
+            // pbxOpponent6
+            // 
+            this.pbxOpponent6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent6.Location = new System.Drawing.Point(385, 16);
+            this.pbxOpponent6.Name = "pbxOpponent6";
+            this.pbxOpponent6.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent6.TabIndex = 9;
+            this.pbxOpponent6.TabStop = false;
+            // 
+            // pbxOpponent7
+            // 
+            this.pbxOpponent7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent7.Location = new System.Drawing.Point(460, 16);
+            this.pbxOpponent7.Name = "pbxOpponent7";
+            this.pbxOpponent7.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent7.TabIndex = 10;
+            this.pbxOpponent7.TabStop = false;
+            // 
+            // pbxOpponent8
+            // 
+            this.pbxOpponent8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent8.Location = new System.Drawing.Point(535, 16);
+            this.pbxOpponent8.Name = "pbxOpponent8";
+            this.pbxOpponent8.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent8.TabIndex = 11;
+            this.pbxOpponent8.TabStop = false;
+            // 
+            // pbxOpponent9
+            // 
+            this.pbxOpponent9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent9.Location = new System.Drawing.Point(610, 16);
+            this.pbxOpponent9.Name = "pbxOpponent9";
+            this.pbxOpponent9.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent9.TabIndex = 12;
+            this.pbxOpponent9.TabStop = false;
+            // 
+            // pbxOpponent10
+            // 
+            this.pbxOpponent10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbxOpponent10.Location = new System.Drawing.Point(685, 16);
+            this.pbxOpponent10.Name = "pbxOpponent10";
+            this.pbxOpponent10.Size = new System.Drawing.Size(100, 150);
+            this.pbxOpponent10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxOpponent10.TabIndex = 13;
+            this.pbxOpponent10.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlYourCards);
             this.Controls.Add(this.btnHit);
             this.Controls.Add(this.btnStand);
@@ -223,18 +363,29 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).EndInit();
             this.pnlYourCards.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxKort10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCard10)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,17 +397,28 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnHit;
         private System.Windows.Forms.Button btnStand;
-        private System.Windows.Forms.PictureBox pbxKort1;
-        private System.Windows.Forms.PictureBox pbxKort2;
+        private System.Windows.Forms.PictureBox pbxCard1;
+        private System.Windows.Forms.PictureBox pbxCard2;
         private System.Windows.Forms.Panel pnlYourCards;
-        private System.Windows.Forms.PictureBox pbxKort3;
-        private System.Windows.Forms.PictureBox pbxKort4;
-        private System.Windows.Forms.PictureBox pbxKort5;
-        private System.Windows.Forms.PictureBox pbxKort6;
-        private System.Windows.Forms.PictureBox pbxKort7;
-        private System.Windows.Forms.PictureBox pbxKort8;
-        private System.Windows.Forms.PictureBox pbxKort9;
-        private System.Windows.Forms.PictureBox pbxKort10;
+        private System.Windows.Forms.PictureBox pbxCard3;
+        private System.Windows.Forms.PictureBox pbxCard4;
+        private System.Windows.Forms.PictureBox pbxCard5;
+        private System.Windows.Forms.PictureBox pbxCard6;
+        private System.Windows.Forms.PictureBox pbxCard7;
+        private System.Windows.Forms.PictureBox pbxCard8;
+        private System.Windows.Forms.PictureBox pbxCard9;
+        private System.Windows.Forms.PictureBox pbxCard10;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pbxOpponent1;
+        private System.Windows.Forms.PictureBox pbxOpponent2;
+        private System.Windows.Forms.PictureBox pbxOpponent3;
+        private System.Windows.Forms.PictureBox pbxOpponent4;
+        private System.Windows.Forms.PictureBox pbxOpponent5;
+        private System.Windows.Forms.PictureBox pbxOpponent6;
+        private System.Windows.Forms.PictureBox pbxOpponent7;
+        private System.Windows.Forms.PictureBox pbxOpponent8;
+        private System.Windows.Forms.PictureBox pbxOpponent9;
+        private System.Windows.Forms.PictureBox pbxOpponent10;
     }
 }
 
