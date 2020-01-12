@@ -8,5 +8,6 @@ namespace Slutprojekt___BlackJack
 {
     class Kortlek
     {
+        Stack<string> Spades = new Stack<string>();
     }
 }
