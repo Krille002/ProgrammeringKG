@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kortlek.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -65,6 +66,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +80,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motstandare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motstandare2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Cards\10C.png" />
+    <Content Include="Resources\Cards\10D.png" />
+    <Content Include="Resources\Cards\10H.png" />
+    <Content Include="Resources\Cards\10S.png" />
+    <Content Include="Resources\Cards\2C.png" />
+    <Content Include="Resources\Cards\2D.png" />
+    <Content Include="Resources\Cards\2H.png" />
+    <Content Include="Resources\Cards\2S.png" />
+    <Content Include="Resources\Cards\3C.png" />
+    <Content Include="Resources\Cards\3D.png" />
+    <Content Include="Resources\Cards\3H.png" />
+    <Content Include="Resources\Cards\3S.png" />
+    <Content Include="Resources\Cards\4C.png" />
+    <Content Include="Resources\Cards\4D.png" />
+    <Content Include="Resources\Cards\4H.png" />
+    <Content Include="Resources\Cards\4S.png" />
+    <Content Include="Resources\Cards\5C.png" />
+    <Content Include="Resources\Cards\5D.png" />
+    <Content Include="Resources\Cards\5H.png" />
+    <Content Include="Resources\Cards\5S.png" />
+    <Content Include="Resources\Cards\6C.png" />
+    <Content Include="Resources\Cards\6D.png" />
+    <Content Include="Resources\Cards\6H.png" />
+    <Content Include="Resources\Cards\6S.png" />
+    <Content Include="Resources\Cards\7C.png" />
+    <Content Include="Resources\Cards\7D.png" />
+    <Content Include="Resources\Cards\7H.png" />
+    <Content Include="Resources\Cards\7S.png" />
+    <Content Include="Resources\Cards\8C.png" />
+    <Content Include="Resources\Cards\8D.png" />
+    <Content Include="Resources\Cards\8H.png" />
+    <Content Include="Resources\Cards\8S.png" />
+    <Content Include="Resources\Cards\9C.png" />
+    <Content Include="Resources\Cards\9D.png" />
+    <Content Include="Resources\Cards\9H.png" />
+    <Content Include="Resources\Cards\9S.png" />
+    <Content Include="Resources\Cards\AC.png" />
+    <Content Include="Resources\Cards\AD.png" />
+    <Content Include="Resources\Cards\AH.png" />
+    <Content Include="Resources\Cards\AS.png" />
+    <Content Include="Resources\Cards\JC.png" />
+    <Content Include="Resources\Cards\JD.png" />
+    <Content Include="Resources\Cards\JH.png" />
+    <Content Include="Resources\Cards\JS.png" />
+    <Content Include="Resources\Cards\KC.png" />
+    <Content Include="Resources\Cards\KD.png" />
+    <Content Include="Resources\Cards\KH.png" />
+    <Content Include="Resources\Cards\KS.png" />
+    <Content Include="Resources\Cards\QC.png" />
+    <Content Include="Resources\Cards\QD.png" />
+    <Content Include="Resources\Cards\QH.png" />
+    <Content Include="Resources\Cards\QS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

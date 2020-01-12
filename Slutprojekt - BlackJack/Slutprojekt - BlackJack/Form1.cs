@@ -15,13 +15,9 @@ namespace Slutprojekt___BlackJack
         public Form1()
         {
             InitializeComponent();
-
+            
         }
 
-        private void Form1_SizeChanged(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
