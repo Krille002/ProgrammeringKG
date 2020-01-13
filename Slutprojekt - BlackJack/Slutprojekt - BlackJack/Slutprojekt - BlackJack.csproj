@@ -88,6 +88,9 @@
     <None Include="Resources\Motstandare2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Cards\red_back.png" />
+    <None Include="Resources\red_back.png" />
+    <None Include="Resources\AS.png" />
     <Content Include="Resources\Cards\10C.png" />
     <Content Include="Resources\Cards\10D.png" />
     <Content Include="Resources\Cards\10H.png" />
@@ -140,6 +143,7 @@
     <Content Include="Resources\Cards\QD.png" />
     <Content Include="Resources\Cards\QH.png" />
     <Content Include="Resources\Cards\QS.png" />
+    <None Include="Resources\KH.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

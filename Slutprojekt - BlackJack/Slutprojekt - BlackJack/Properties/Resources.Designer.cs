@@ -73,6 +73,26 @@ namespace Slutprojekt___BlackJack.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AS {
+            get {
+                object obj = ResourceManager.GetObject("AS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap KH {
+            get {
+                object obj = ResourceManager.GetObject("KH", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Motstandare {
             get {
                 object obj = ResourceManager.GetObject("Motstandare", resourceCulture);
@@ -86,6 +106,16 @@ namespace Slutprojekt___BlackJack.Properties {
         internal static System.Drawing.Bitmap Motstandare2 {
             get {
                 object obj = ResourceManager.GetObject("Motstandare2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap red_back {
+            get {
+                object obj = ResourceManager.GetObject("red_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
