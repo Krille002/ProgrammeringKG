@@ -10,7 +10,6 @@ namespace Slutprojekt___BlackJack
     {
         private List<string> activeDeck = new List<string>();
         private char suitGenerate;
-        private int cardGenerate;
         private string tempStringGenerate;
 
         //Egenskap för att testa
