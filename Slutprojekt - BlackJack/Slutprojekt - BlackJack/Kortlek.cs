@@ -19,7 +19,7 @@ namespace Slutprojekt___BlackJack
         {
             get
             {
-                return activeDeck[13];
+                return activeDeck[0];
             }
             set
             {
