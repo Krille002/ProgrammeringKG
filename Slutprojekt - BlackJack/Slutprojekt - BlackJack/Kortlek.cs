@@ -12,6 +12,8 @@ namespace Slutprojekt___BlackJack
         private char suitGenerate;
         private string tempStringGenerate;
 
+        Random Shuffler = new Random();
+
         //Egenskap för att testa
 
         public string First
@@ -31,6 +33,15 @@ namespace Slutprojekt___BlackJack
 
         //Metoder
 
+
+        public string DebugPrint(int i)
+        {
+            string kort;
+
+            kort = activeDeck[i];
+
+            return kort;
+        }
 
         //Generera lista
         public void Generate()
@@ -68,9 +79,24 @@ namespace Slutprojekt___BlackJack
 
 
         //Blanda kortlek
-        public List<string> Shuffle(List<string> tempList)
+        public List<string> Shuffle(List<string> tempList, int antalPlatsbyten)
         {
+            int index1;
+            int index2;
+            string temporaryString;
 
+            //Plats 1 ska placeras på plats 2 och plats 2 på plats 1
+            for(int i = 0; i < antalPlatsbyten; i++)
+            {
+                index1 = Shuffler.Next(1, 53);
+                index2 = Shuffler.Next(1, 53);
+
+                temporaryString = activeDeck[index2];
+
+                activeDeck[index2] = activeDeck[index1];
+                activeDeck[index1] = temporaryString;
+
+            }
 
             return tempList;
         }
