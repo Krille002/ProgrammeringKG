@@ -79,17 +79,17 @@ namespace Slutprojekt___BlackJack
 
 
         //Blanda kortlek
-        public List<string> Shuffle(List<string> tempList, int antalPlatsbyten)
+        public void Shuffle(int switches)
         {
             int index1;
             int index2;
             string temporaryString;
 
             //Plats 1 ska placeras på plats 2 och plats 2 på plats 1
-            for(int i = 0; i < antalPlatsbyten; i++)
+            for(int i = 0; i < switches; i++)
             {
-                index1 = Shuffler.Next(1, 53);
-                index2 = Shuffler.Next(1, 53);
+                index1 = Shuffler.Next(0, 52);
+                index2 = Shuffler.Next(0, 52);
 
                 temporaryString = activeDeck[index2];
 
@@ -98,7 +98,7 @@ namespace Slutprojekt___BlackJack
 
             }
 
-            return tempList;
+
         }
 
 

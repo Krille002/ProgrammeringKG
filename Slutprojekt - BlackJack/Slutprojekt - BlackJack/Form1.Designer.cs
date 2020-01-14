@@ -55,6 +55,7 @@
             this.pbxOpponent10 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDebug = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlYourCards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).BeginInit();
@@ -370,6 +371,13 @@
             this.btnDebug.UseVisualStyleBackColor = true;
             this.btnDebug.Click += new System.EventHandler(this.BtnDebug_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(132, 6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(843, 643);
+            this.panel2.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +391,7 @@
             this.Controls.Add(this.btnStand);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.pnlYourCards.ResumeLayout(false);
@@ -442,6 +451,7 @@
         private System.Windows.Forms.PictureBox pbxOpponent9;
         private System.Windows.Forms.PictureBox pbxOpponent10;
         private System.Windows.Forms.Button btnDebug;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

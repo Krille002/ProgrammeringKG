@@ -12,20 +12,21 @@ namespace Slutprojekt___BlackJack
 {
     public partial class Form1 : Form
     {
-        ///////////////////////////////////////////////////////////Kortlek myDeck = new Kortlek();
+        Kortlek currentDeck = new Kortlek();
         
         int debugInteger = 0;
 
         public Form1()
         {
             InitializeComponent();
-            myDeck.Generate();
+            currentDeck.Generate();
+            currentDeck.Shuffle(52);
         }
 
         private void BtnDebug_Click(object sender, EventArgs e)
         {
             if (debugInteger == 52) debugInteger = 0;
-            label1.Text = myDeck.DebugPrint(debugInteger);
+            label1.Text = currentDeck.DebugPrint(debugInteger);
             debugInteger++;
         }
 
