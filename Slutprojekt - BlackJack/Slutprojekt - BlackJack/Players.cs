@@ -8,7 +8,7 @@ namespace Slutprojekt___BlackJack
 {
     class Players
     {
-        List<string> AIHand = new List<string>();
+        public List<string> DealerHand = new List<string>();
         List<string> PlayerHand = new List<string>();
 
 
@@ -17,9 +17,9 @@ namespace Slutprojekt___BlackJack
 
 
         //Sätta in kort i AIs hand
-        public void AIHandAdd (string CardToAdd)
+        public void DealerHandAdd (string CardToAdd)
         {
-            AIHand.Add(CardToAdd);
+            DealerHand.Add(CardToAdd);
         }
 
         //Sätta in kort i spelares hand
