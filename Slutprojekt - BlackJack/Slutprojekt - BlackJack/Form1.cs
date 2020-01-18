@@ -12,13 +12,15 @@ namespace Slutprojekt___BlackJack
 {
     public partial class Form1 : Form
     {
-        Kortlek currentDeck = new Kortlek();
+        CardDeck currentDeck = new CardDeck();
         
         int debugInteger = 0;
 
         public Form1()
         {
             InitializeComponent();
+
+            //Generera kortlek och blanda 53 platsbyten
             currentDeck.Generate();
             currentDeck.Shuffle(52);
         }

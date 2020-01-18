@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Slutprojekt___BlackJack
 {
-    class Kortlek
+    class CardDeck
     {
         private List<string> activeDeck = new List<string>();
         private char suitGenerate;
         private string tempStringGenerate;
 
         Random Shuffler = new Random();
+
+
 
         //Egenskap för att testa
 
@@ -42,6 +44,8 @@ namespace Slutprojekt___BlackJack
 
             return kort;
         }
+
+
 
         //Generera lista
         public void Generate()
@@ -78,6 +82,8 @@ namespace Slutprojekt___BlackJack
         }
 
 
+
+
         //Blanda kortlek
         public void Shuffle(int switches)
         {
@@ -103,9 +109,11 @@ namespace Slutprojekt___BlackJack
 
 
         //Dra översta kort
-        public string PullCard(List<string> tempList2)
+        public string PullCard()
         {
-            string card = tempList2.Last();
+            //Plocka ut och radera översta kortet i leken
+            string card = activeDeck.Last();
+            activeDeck.RemoveAt(activeDeck.Count() - 1);
 
 
             return card;
