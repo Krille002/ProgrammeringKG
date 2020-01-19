@@ -17,6 +17,7 @@ namespace Slutprojekt___BlackJack
         
         int debugInteger = 0;
         int playerHandValue = 0;
+        bool justGotAce = false;
 
         public Form1()
         {
@@ -58,10 +59,9 @@ namespace Slutprojekt___BlackJack
             if(CheckCardValue(PulledCard) == 1)
             {
                 //Hantera ess
-                if (btnHit.)
-                {
-
-                }
+                justGotAce = true;
+                pnlAceValue.Visible = true;
+      
             }
             else
             {
@@ -117,6 +117,20 @@ namespace Slutprojekt___BlackJack
                 return -1;
             }
             
+        }
+
+
+        //Hantera Ess värde
+        private void btnEleven_Click(object sender, EventArgs e)
+        {
+            pnlAceValue.Visible = false;
+            playerHandValue = playerHandValue + 11;
+        }
+
+        private void btnOne_Click(object sender, EventArgs e)
+        {
+            pnlAceValue.Visible = false;
+            playerHandValue = playerHandValue + 1;
         }
     }
 }
