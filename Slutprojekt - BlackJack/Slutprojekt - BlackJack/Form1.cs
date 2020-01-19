@@ -54,9 +54,24 @@ namespace Slutprojekt___BlackJack
             string PulledCard = currentDeck.PullCard();
             currentPlayers.PlayerHandAdd(PulledCard);
 
-            playerHandValue = playerHandValue + CheckCardValue(PulledCard);
             //Räkna ut spelares totala poäng
+            if(CheckCardValue(PulledCard) == 1)
+            {
+                //Hantera ess
+                if (btnHit.)
+                {
+
+                }
+            }
+            else
+            {
+                //Addera värde av nytt kort
+                playerHandValue = playerHandValue + CheckCardValue(PulledCard);
+            }        
+    
+
             //Rita ut kort och poäng till skärm
+
             //Hantera ess och gå över 21
 
 
@@ -77,25 +92,25 @@ namespace Slutprojekt___BlackJack
 
 
 
+
+        //Kolla kortets värde i integers. (kortets nummer)
         public int CheckCardValue (string cardString)
         {
-            int firstNumber;
-            int secondNumber;
+            char firstNumberChar;
+            char secondNumberChar;
 
             if(cardString.Length == 2)
             {
-                firstNumber = cardString[0];
+                firstNumberChar = cardString[0];
 
-                return firstNumber;
+                return int.Parse(firstNumberChar.ToString());
             }
             else if (cardString.Length == 3)
             {
-                firstNumber = cardString[0];
-                secondNumber = cardString[1];
+                firstNumberChar = cardString[0];
+                secondNumberChar = cardString[1];
 
-                string cardNumberString = firstNumber.ToString() + secondNumber.ToString();
-
-                return int.Parse(cardNumberString);
+                return int.Parse(firstNumberChar.ToString() + secondNumberChar.ToString());
             }
             else
             {

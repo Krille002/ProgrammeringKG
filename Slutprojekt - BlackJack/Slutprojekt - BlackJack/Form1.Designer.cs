@@ -42,7 +42,7 @@
             this.pbxCard8 = new System.Windows.Forms.PictureBox();
             this.pbxCard9 = new System.Windows.Forms.PictureBox();
             this.pbxCard10 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDealerDeck = new System.Windows.Forms.Panel();
             this.pbxOpponent1 = new System.Windows.Forms.PictureBox();
             this.pbxOpponent2 = new System.Windows.Forms.PictureBox();
             this.pbxOpponent3 = new System.Windows.Forms.PictureBox();
@@ -55,7 +55,8 @@
             this.pbxOpponent10 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDebug = new System.Windows.Forms.Button();
-            this.panelGame = new System.Windows.Forms.Panel();
+            this.pnlGame = new System.Windows.Forms.Panel();
+            this.pnlHitStand = new System.Windows.Forms.Panel();
             this.pnlYourCards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).BeginInit();
@@ -67,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard10)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlDealerDeck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent3)).BeginInit();
@@ -79,6 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlGame.SuspendLayout();
+            this.pnlHitStand.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -93,7 +96,7 @@
             // 
             // btnHit
             // 
-            this.btnHit.Location = new System.Drawing.Point(600, 373);
+            this.btnHit.Location = new System.Drawing.Point(200, 0);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(100, 40);
             this.btnHit.TabIndex = 2;
@@ -103,7 +106,7 @@
             // 
             // btnStand
             // 
-            this.btnStand.Location = new System.Drawing.Point(400, 373);
+            this.btnStand.Location = new System.Drawing.Point(0, 0);
             this.btnStand.Name = "btnStand";
             this.btnStand.Size = new System.Drawing.Size(100, 40);
             this.btnStand.TabIndex = 3;
@@ -124,7 +127,7 @@
             this.pnlYourCards.Controls.Add(this.pbxCard8);
             this.pnlYourCards.Controls.Add(this.pbxCard9);
             this.pnlYourCards.Controls.Add(this.pbxCard10);
-            this.pnlYourCards.Location = new System.Drawing.Point(168, 460);
+            this.pnlYourCards.Location = new System.Drawing.Point(36, 454);
             this.pnlYourCards.Name = "pnlYourCards";
             this.pnlYourCards.Size = new System.Drawing.Size(794, 189);
             this.pnlYourCards.TabIndex = 6;
@@ -233,22 +236,22 @@
             this.pbxCard10.TabIndex = 13;
             this.pbxCard10.TabStop = false;
             // 
-            // panel1
+            // pnlDealerDeck
             // 
-            this.panel1.Controls.Add(this.pbxOpponent1);
-            this.panel1.Controls.Add(this.pbxOpponent2);
-            this.panel1.Controls.Add(this.pbxOpponent3);
-            this.panel1.Controls.Add(this.pbxOpponent4);
-            this.panel1.Controls.Add(this.pbxOpponent5);
-            this.panel1.Controls.Add(this.pbxOpponent6);
-            this.panel1.Controls.Add(this.pbxOpponent7);
-            this.panel1.Controls.Add(this.pbxOpponent8);
-            this.panel1.Controls.Add(this.pbxOpponent9);
-            this.panel1.Controls.Add(this.pbxOpponent10);
-            this.panel1.Location = new System.Drawing.Point(168, 119);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(794, 189);
-            this.panel1.TabIndex = 7;
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent1);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent2);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent3);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent4);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent5);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent6);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent7);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent8);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent9);
+            this.pnlDealerDeck.Controls.Add(this.pbxOpponent10);
+            this.pnlDealerDeck.Location = new System.Drawing.Point(36, 109);
+            this.pnlDealerDeck.Name = "pnlDealerDeck";
+            this.pnlDealerDeck.Size = new System.Drawing.Size(794, 189);
+            this.pnlDealerDeck.TabIndex = 7;
             // 
             // pbxOpponent1
             // 
@@ -355,7 +358,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Slutprojekt___BlackJack.Properties.Resources.Motstandare2;
-            this.pictureBox1.Location = new System.Drawing.Point(500, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(375, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 1;
@@ -371,12 +374,27 @@
             this.btnDebug.UseVisualStyleBackColor = true;
             this.btnDebug.Click += new System.EventHandler(this.BtnDebug_Click);
             // 
-            // panelGame
+            // pnlGame
             // 
-            this.panelGame.Location = new System.Drawing.Point(132, 6);
-            this.panelGame.Name = "panelGame";
-            this.panelGame.Size = new System.Drawing.Size(843, 643);
-            this.panelGame.TabIndex = 9;
+            this.pnlGame.Controls.Add(this.pictureBox1);
+            this.pnlGame.Controls.Add(this.pnlYourCards);
+            this.pnlGame.Controls.Add(this.pnlDealerDeck);
+            this.pnlGame.Controls.Add(this.pnlHitStand);
+            this.pnlGame.Enabled = false;
+            this.pnlGame.Location = new System.Drawing.Point(132, 6);
+            this.pnlGame.Name = "pnlGame";
+            this.pnlGame.Size = new System.Drawing.Size(850, 650);
+            this.pnlGame.TabIndex = 9;
+            // 
+            // pnlHitStand
+            // 
+            this.pnlHitStand.Controls.Add(this.btnStand);
+            this.pnlHitStand.Controls.Add(this.btnHit);
+            this.pnlHitStand.Location = new System.Drawing.Point(275, 367);
+            this.pnlHitStand.Name = "pnlHitStand";
+            this.pnlHitStand.Size = new System.Drawing.Size(300, 40);
+            this.pnlHitStand.TabIndex = 8;
+            this.pnlHitStand.Visible = false;
             // 
             // Form1
             // 
@@ -385,13 +403,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1084, 661);
             this.Controls.Add(this.btnDebug);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pnlYourCards);
-            this.Controls.Add(this.btnHit);
-            this.Controls.Add(this.btnStand);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panelGame);
+            this.Controls.Add(this.pnlGame);
             this.Name = "Form1";
             this.Text = "Form1";
             this.pnlYourCards.ResumeLayout(false);
@@ -405,7 +418,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard10)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.pnlDealerDeck.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent3)).EndInit();
@@ -417,6 +430,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxOpponent10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlGame.ResumeLayout(false);
+            this.pnlHitStand.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +454,7 @@
         private System.Windows.Forms.PictureBox pbxCard8;
         private System.Windows.Forms.PictureBox pbxCard9;
         private System.Windows.Forms.PictureBox pbxCard10;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDealerDeck;
         private System.Windows.Forms.PictureBox pbxOpponent1;
         private System.Windows.Forms.PictureBox pbxOpponent2;
         private System.Windows.Forms.PictureBox pbxOpponent3;
@@ -451,7 +466,8 @@
         private System.Windows.Forms.PictureBox pbxOpponent9;
         private System.Windows.Forms.PictureBox pbxOpponent10;
         private System.Windows.Forms.Button btnDebug;
-        private System.Windows.Forms.Panel panelGame;
+        private System.Windows.Forms.Panel pnlGame;
+        private System.Windows.Forms.Panel pnlHitStand;
     }
 }
 
