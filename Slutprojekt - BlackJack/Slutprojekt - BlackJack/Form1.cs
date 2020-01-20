@@ -12,12 +12,15 @@ namespace Slutprojekt___BlackJack
 {
     public partial class Form1 : Form
     {
+
         CardDeck currentDeck = new CardDeck();
         Players currentPlayers = new Players();
         
+
         int debugInteger = 0;
         int playerHandValue = 0;
         bool justGotAce = false;
+        string statusString = "";
 
         public Form1()
         {
@@ -53,7 +56,11 @@ namespace Slutprojekt___BlackJack
 
             //Dra kort och sätta i handen
             string PulledCard = currentDeck.PullCard();
-            currentPlayers.PlayerHandAdd(PulledCard);
+            currentPlayers.PlayerHandAdd(PulledCard);                             //Kan göras på en rad
+
+
+            //Test
+            PulledCard = "1S";
 
             //Räkna ut spelares totala poäng
             if(CheckCardValue(PulledCard) == 1)
@@ -61,6 +68,7 @@ namespace Slutprojekt___BlackJack
                 //Hantera ess
                 justGotAce = true;
                 pnlAceValue.Visible = true;
+                pbxCard1.Image = Image.FromFile("C:/Users/chrris0223/Source/Repos/Krille002/ProgrammeringKG/Slutprojekt - BlackJack/Slutprojekt - BlackJack/Resources/AS.png");
       
             }
             else
@@ -125,17 +133,29 @@ namespace Slutprojekt___BlackJack
         {
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 11;
+            justGotAce = false;
         }
 
         private void btnOne_Click(object sender, EventArgs e)
         {
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 1;
+            justGotAce = false;
         }
 
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
             pnlGame.Enabled = true;
         }
+
+
+        //Rita ut skärmen
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+        }
+
+
     }
 }

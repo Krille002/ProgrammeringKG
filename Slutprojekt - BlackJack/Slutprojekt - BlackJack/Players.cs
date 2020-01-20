@@ -9,7 +9,7 @@ namespace Slutprojekt___BlackJack
     class Players
     {
         public List<string> DealerHand = new List<string>();
-        List<string> PlayerHand = new List<string>();
+        public List<string> PlayerHand = new List<string>();
 
 
 
