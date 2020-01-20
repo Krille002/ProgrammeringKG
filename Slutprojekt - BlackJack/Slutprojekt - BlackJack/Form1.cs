@@ -67,16 +67,25 @@ namespace Slutprojekt___BlackJack
 
                 if(playerHandValue + 1 > 21)
                 {
-
+                    EndGame();
                 }
-                //Hantera ess
-                statusString = "Du drog ett ess. Välj värdet du föredrar:";
-                
-                justGotAce = true;
-                pnlAceValue.Visible = true;
-                pbxCard1.Image = Image.FromFile("C:/Users/chrris0223/Source/Repos/Krille002/ProgrammeringKG/Slutprojekt - BlackJack/Slutprojekt - BlackJack/Resources/Cards/" + PulledCard + ".png");
-                Invalidate();
-            }
+                else
+                {
+                    //Hantera ess
+                    statusString = "Du drog ett ess. Välj värdet du föredrar:";
+                    Invalidate();
+                    justGotAce = true;
+                    pnlAceValue.Visible = true;
+
+                    pbxCard1.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + PulledCard + ".png");
+
+                    //Olika test
+                    //pbxCard1.Image = Image.FromFile("C:/Users/chrris0223/Source/Repos/Krille002/ProgrammeringKG/Slutprojekt - BlackJack/Slutprojekt - BlackJack/Resources/Cards/" + PulledCard + ".png");
+                    //label1.Text = System.Windows.Forms.Application.StartupPath;
+                    //label1.Text = Environment.CurrentDirectory + "/Cards/" + PulledCard + ".png";
+                }
+
+            }   
             else
             {
                 //Addera värde av nytt kort
