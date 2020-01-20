@@ -396,7 +396,7 @@
             // 
             this.pnlAceValue.Controls.Add(this.btnOne);
             this.pnlAceValue.Controls.Add(this.btnEleven);
-            this.pnlAceValue.Location = new System.Drawing.Point(275, 321);
+            this.pnlAceValue.Location = new System.Drawing.Point(275, 367);
             this.pnlAceValue.Name = "pnlAceValue";
             this.pnlAceValue.Size = new System.Drawing.Size(300, 40);
             this.pnlAceValue.TabIndex = 9;

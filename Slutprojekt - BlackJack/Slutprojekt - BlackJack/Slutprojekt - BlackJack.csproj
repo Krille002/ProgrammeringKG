@@ -89,6 +89,22 @@
     <None Include="Resources\Motstandare2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Cards\11C.png" />
+    <Content Include="Resources\Cards\11D.png" />
+    <Content Include="Resources\Cards\11H.png" />
+    <Content Include="Resources\Cards\11S.png" />
+    <Content Include="Resources\Cards\12C.png" />
+    <Content Include="Resources\Cards\12D.png" />
+    <Content Include="Resources\Cards\12H.png" />
+    <Content Include="Resources\Cards\12S.png" />
+    <Content Include="Resources\Cards\13C.png" />
+    <Content Include="Resources\Cards\13D.png" />
+    <Content Include="Resources\Cards\13H.png" />
+    <Content Include="Resources\Cards\13S.png" />
+    <Content Include="Resources\Cards\1C.png" />
+    <Content Include="Resources\Cards\1D.png" />
+    <Content Include="Resources\Cards\1H.png" />
+    <Content Include="Resources\Cards\1S.png" />
     <Content Include="Resources\Cards\red_back.png" />
     <None Include="Resources\red_back.png" />
     <None Include="Resources\AS.png" />
@@ -128,22 +144,6 @@
     <Content Include="Resources\Cards\9D.png" />
     <Content Include="Resources\Cards\9H.png" />
     <Content Include="Resources\Cards\9S.png" />
-    <Content Include="Resources\Cards\AC.png" />
-    <Content Include="Resources\Cards\AD.png" />
-    <Content Include="Resources\Cards\AH.png" />
-    <Content Include="Resources\Cards\AS.png" />
-    <Content Include="Resources\Cards\JC.png" />
-    <Content Include="Resources\Cards\JD.png" />
-    <Content Include="Resources\Cards\JH.png" />
-    <Content Include="Resources\Cards\JS.png" />
-    <Content Include="Resources\Cards\KC.png" />
-    <Content Include="Resources\Cards\KD.png" />
-    <Content Include="Resources\Cards\KH.png" />
-    <Content Include="Resources\Cards\KS.png" />
-    <Content Include="Resources\Cards\QC.png" />
-    <Content Include="Resources\Cards\QD.png" />
-    <Content Include="Resources\Cards\QH.png" />
-    <Content Include="Resources\Cards\QS.png" />
     <None Include="Resources\KH.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

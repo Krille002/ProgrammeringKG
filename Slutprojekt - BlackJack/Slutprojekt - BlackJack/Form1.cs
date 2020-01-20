@@ -51,8 +51,7 @@ namespace Slutprojekt___BlackJack
         //Hit
         private void BtnHit_Click(object sender, EventArgs e)
         {
-            btnHit.Enabled = false;
-            btnStand.Enabled = false;
+            pnlHitStand.Visible = false;
 
             //Dra kort och sätta i handen
             string PulledCard = currentDeck.PullCard();
@@ -66,10 +65,12 @@ namespace Slutprojekt___BlackJack
             if(CheckCardValue(PulledCard) == 1)
             {
                 //Hantera ess
+                statusString = "Du drog ett ess. Välj värdet du föredrar:";
+                
                 justGotAce = true;
                 pnlAceValue.Visible = true;
-                pbxCard1.Image = Image.FromFile("C:/Users/chrris0223/Source/Repos/Krille002/ProgrammeringKG/Slutprojekt - BlackJack/Slutprojekt - BlackJack/Resources/AS.png");
-      
+                pbxCard1.Image = Image.FromFile("C:/Users/chrris0223/Source/Repos/Krille002/ProgrammeringKG/Slutprojekt - BlackJack/Slutprojekt - BlackJack/Resources/Cards/" + PulledCard + ".png");
+                Invalidate();
             }
             else
             {
@@ -90,8 +91,7 @@ namespace Slutprojekt___BlackJack
         //Stand
         private void BtnStand_Click(object sender, EventArgs e)
         {
-            btnHit.Enabled = false;
-            btnStand.Enabled = false;
+            pnlHitStand.Visible = false;
 
             //Jämföra spelares och Dealers poäng
             //Bestäm vinnare
@@ -134,6 +134,8 @@ namespace Slutprojekt___BlackJack
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 11;
             justGotAce = false;
+
+            pnlHitStand.Visible = true;
         }
 
         private void btnOne_Click(object sender, EventArgs e)
@@ -141,6 +143,8 @@ namespace Slutprojekt___BlackJack
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 1;
             justGotAce = false;
+
+            pnlHitStand.Visible = true;
         }
 
         private void BtnStartGame_Click(object sender, EventArgs e)
@@ -153,6 +157,14 @@ namespace Slutprojekt___BlackJack
         protected override void OnPaint(PaintEventArgs e)
         {
             Graphics g = e.Graphics;
+
+            Brush statusPenna = new SolidBrush(Color.Black);
+            Font statusFont = new Font("Arial", 16);
+            Point statusPoint = new Point(275, 330);
+            g.DrawString(statusString, statusFont, statusPenna, statusPoint);
+
+        
+
 
         }
 
