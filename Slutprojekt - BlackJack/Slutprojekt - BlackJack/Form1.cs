@@ -58,12 +58,17 @@ namespace Slutprojekt___BlackJack
             currentPlayers.PlayerHandAdd(PulledCard);                             //Kan göras på en rad
 
 
-            //Test
-            PulledCard = "1S";
+            //Test /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            PulledCard = "1S";       //Debug
 
             //Räkna ut spelares totala poäng
             if(CheckCardValue(PulledCard) == 1)
             {
+
+                if(playerHandValue + 1 > 21)
+                {
+
+                }
                 //Hantera ess
                 statusString = "Du drog ett ess. Välj värdet du föredrar:";
                 
@@ -76,11 +81,10 @@ namespace Slutprojekt___BlackJack
             {
                 //Addera värde av nytt kort
                 playerHandValue = playerHandValue + CheckCardValue(PulledCard);
-            }        
-    
+            }
+
 
             //Rita ut kort och poäng till skärm
-
             //Hantera ess och gå över 21
 
 
@@ -161,6 +165,7 @@ namespace Slutprojekt___BlackJack
             Brush statusPenna = new SolidBrush(Color.Black);
             Font statusFont = new Font("Arial", 16);
             Point statusPoint = new Point(275, 330);
+
             g.DrawString(statusString, statusFont, statusPenna, statusPoint);
 
         
@@ -168,6 +173,13 @@ namespace Slutprojekt___BlackJack
 
         }
 
+
+
+
+        private void EndGame()
+        {
+
+        }
 
     }
 }
