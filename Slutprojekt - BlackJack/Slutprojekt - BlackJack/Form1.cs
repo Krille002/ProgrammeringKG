@@ -132,5 +132,10 @@ namespace Slutprojekt___BlackJack
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 1;
         }
+
+        private void BtnStartGame_Click(object sender, EventArgs e)
+        {
+            pnlGame.Enabled = true;
+        }
     }
 }
