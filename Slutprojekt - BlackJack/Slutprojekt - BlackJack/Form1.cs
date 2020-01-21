@@ -16,22 +16,21 @@ namespace Slutprojekt___BlackJack
         CardDeck currentDeck = new CardDeck();
         Players currentPlayers = new Players();
         
-
+        //Medlemsvariabler
+            //int
         int debugInteger = 0;
         int playerHandValue = 0;
+        int dealerHandValue = 0;
+        int dealerHiddenCard;
+        //bool
         bool justGotAce = false;
+            //string
         string statusString = "";
+        
 
         public Form1()
         {
             InitializeComponent();
-
-            //Generera kortlek och blanda 53 platsbyten
-            currentDeck.Generate();
-            currentDeck.Shuffle(52);
-
-            //Dra första kort åt dealern
-            currentPlayers.DealerHandAdd(currentDeck.PullCard());
         }
 
 
@@ -46,7 +45,8 @@ namespace Slutprojekt___BlackJack
             label1.Text = playerHandValue.ToString();
         }
 
-
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Hit och stand
 
         //Hit
         private void BtnHit_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Slutprojekt___BlackJack
 
 
 
-
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Kolla kortets värde i integers. (kortets nummer)
         public int CheckCardValue (string cardString)
         {
@@ -140,7 +140,7 @@ namespace Slutprojekt___BlackJack
             
         }
 
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Hantera Ess värde
         private void btnEleven_Click(object sender, EventArgs e)
         {
@@ -160,12 +160,44 @@ namespace Slutprojekt___BlackJack
             pnlHitStand.Visible = true;
         }
 
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Starta Spel
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
-            pnlGame.Enabled = true;
+            //Rensa
+            currentDeck.ClearDeck();
+            playerHandValue = 0;
+            dealerHandValue = 0;
+
+            //Första pictureboxes för motståndare. (Profil, Gömt kort, första kort)
+            if (cbxHard.Checked == true)
+            {
+                pbxOpponent.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "matt.jpg");
+            }
+            else
+            {
+                pbxOpponent.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "Opponent.png");
+            }
+
+            pbxOpponent1.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "gray_back.png");
+            pbxOpponent2.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "red_back.png");
+
+
+            //Generera kortlek och blanda 53 platsbyten
+            currentDeck.Generate();
+            currentDeck.Shuffle(52);
+
+            //Dra första kort åt dealern
+            dealerHiddenCard = CheckCardValue(currentDeck.PullCard());
+            currentPlayers.DealerHandAdd(currentDeck.PullCard());
+
+            pnlGame.Visible = true;
+            pnlHitStand.Visible = true;
+            pnlYourCards.Visible = true;
         }
 
-
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Rita ut skärmen
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -183,8 +215,8 @@ namespace Slutprojekt___BlackJack
         }
 
 
-
-
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Hantera slutet
         private void EndGame()
         {
 

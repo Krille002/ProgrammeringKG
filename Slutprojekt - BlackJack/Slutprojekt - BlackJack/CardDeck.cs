@@ -118,5 +118,11 @@ namespace Slutprojekt___BlackJack
 
             return card;
         }
+
+        //Rensa lek
+        public void ClearDeck()
+        {
+            activeDeck.Clear();
+        }
     }
 }
