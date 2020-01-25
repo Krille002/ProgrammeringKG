@@ -450,7 +450,6 @@
             // 
             // btnStartGame
             // 
-            this.btnStartGame.Enabled = false;
             this.btnStartGame.Location = new System.Drawing.Point(17, 86);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(49, 23);
@@ -475,6 +474,7 @@
             this.tbxUser.Name = "tbxUser";
             this.tbxUser.Size = new System.Drawing.Size(61, 20);
             this.tbxUser.TabIndex = 12;
+            this.tbxUser.Text = "Christian";
             this.tbxUser.TextChanged += new System.EventHandler(this.TbxUser_TextChanged);
             // 
             // label2

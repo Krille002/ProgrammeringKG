@@ -15,11 +15,11 @@ namespace Slutprojekt___BlackJack
 
         CardDeck currentDeck = new CardDeck();
         Players currentPlayers = new Players();
-        PictureBox[] dealerPictoreboxes = new PictureBox[10];
-        PictureBox[] playerPictureboxes = new PictureBox[10];
-
-
+        PictureBoxes currentPictureboxes = new PictureBoxes();
+        public PictureBox[] dealerPictoreboxes = new PictureBox[10];
+        public PictureBox[] playerPictureboxes = new PictureBox[10];
         
+
         //Medlemsvariabler
             //int
         int debugInteger = 0;
@@ -32,14 +32,19 @@ namespace Slutprojekt___BlackJack
         string dealerHiddenCard;
         string projectAddress;
 
+            //Global
+        string globalTempCard;
+
 
 
         public Form1()
         {
 
             InitializeComponent();
-            
+            PictureBox[] dealerPictureboxes = { pbxOpponent1, pbxOpponent2, pbxOpponent3, pbxOpponent4, pbxOpponent4, pbxOpponent5, pbxOpponent6, pbxOpponent7, pbxOpponent8, pbxOpponent9, pbxOpponent10 };
+            PictureBox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10 };
         }
+
 
 
         //Debug
@@ -65,6 +70,7 @@ namespace Slutprojekt___BlackJack
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
+            currentPictureboxes.SetPath = projectAddress;
 
             //Rensa
             currentDeck.ClearDeck();
@@ -80,9 +86,6 @@ namespace Slutprojekt___BlackJack
             {
                 pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\Opponent.png");
             }
-
-            //pbxOpponent1.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "gray_back.png");      //
-            //pbxOpponent2.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "red_back.png");       //
 
 
             //Generera kortlek och blanda 53 platsbyten
@@ -117,38 +120,37 @@ namespace Slutprojekt___BlackJack
             pnlHitStand.Visible = false;
 
             //Dra kort och sätta i handen
-            string PulledCard = currentDeck.PullCard();
-            currentPlayers.PlayerHandAdd(PulledCard);                             //Kan göras på en rad
+            string pulledCard = currentDeck.PullCard();
+            currentPlayers.PlayerHandAdd(pulledCard);
 
 
             //Test /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            PulledCard = "1S";       //Debug
+            pulledCard = "1S";       //Debug
 
             //Räkna ut spelares totala poäng
-            if(CheckCardValue(PulledCard) == 1)
+            if(CheckCardValue(pulledCard) == 1)
             {
 
                 if(playerHandValue + 1 > 21)
                 {
+                    //Avsluta spel om spelaren redan ligger på 21 och alltså går över det med detta kort
                     EndGame();
                 }
                 else
                 {
                     //Hantera ess
-                    statusString = "Du drog ett ess. Välj värdet du föredrar:";
+                    statusString = "You got an Ace! Choose your preferred value:";
                     Invalidate();
                     justGotAce = true;
                     pnlAceValue.Visible = true;
-
-                    pbxCard1.Image = Image.FromFile(projectAddress+ "/Cards/" + PulledCard + ".png");
-
+                    globalTempCard = pulledCard;
                 }
 
             }   
             else
             {
                 //Addera värde av nytt kort
-                playerHandValue = playerHandValue + CheckCardValue(PulledCard);
+                playerHandValue = playerHandValue + CheckCardValue(pulledCard);
             }
 
 
@@ -169,6 +171,42 @@ namespace Slutprojekt___BlackJack
             //Bestäm vinnare
 
         }
+
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Hantera Ess värde
+        private void btnEleven_Click(object sender, EventArgs e)
+        {
+            pnlAceValue.Visible = false;
+            playerHandValue = playerHandValue + 11;
+            justGotAce = false;
+            statusString = "";
+            Invalidate();
+
+            pnlHitStand.Visible = true;
+
+            currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
+            //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
+
+
+        }
+
+        private void btnOne_Click(object sender, EventArgs e)
+        {
+            pnlAceValue.Visible = false;
+            playerHandValue = playerHandValue + 1;
+            justGotAce = false;
+            statusString = "";
+            Invalidate();
+
+            pnlHitStand.Visible = true;
+
+            currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
+            //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
+
+        }
+
 
 
 
@@ -199,27 +237,6 @@ namespace Slutprojekt___BlackJack
             
         }
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Hantera Ess värde
-        private void btnEleven_Click(object sender, EventArgs e)
-        {
-            pnlAceValue.Visible = false;
-            playerHandValue = playerHandValue + 11;
-            justGotAce = false;
-
-            pnlHitStand.Visible = true;
-        }
-
-        private void btnOne_Click(object sender, EventArgs e)
-        {
-            pnlAceValue.Visible = false;
-            playerHandValue = playerHandValue + 1;
-            justGotAce = false;
-
-            pnlHitStand.Visible = true;
-        }
-
-
 
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -230,7 +247,7 @@ namespace Slutprojekt___BlackJack
 
             Brush statusPenna = new SolidBrush(Color.Black);
             Font statusFont = new Font("Arial", 16);
-            Point statusPoint = new Point(275, 330);
+            Point statusPoint = new Point(330, 330);
 
             g.DrawString(statusString, statusFont, statusPenna, statusPoint);
 
