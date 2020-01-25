@@ -124,15 +124,6 @@
   <data name="red_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\red_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gray_back1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gray_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2C" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cards\2C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gray_back2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cards\gray_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="gray_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gray_back1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,9 +132,6 @@
   </data>
   <data name="KH" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\KH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Motstandare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Motstandare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="matt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\matt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

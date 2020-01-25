@@ -21,16 +21,19 @@ namespace Slutprojekt___BlackJack
         int debugInteger = 0;
         int playerHandValue = 0;
         int dealerHandValue = 0;
-        int dealerHiddenCard;
-        //bool
+            //bool
         bool justGotAce = false;
             //string
         string statusString = "";
-        
+        string dealerHiddenCard;
+        string projectAddress;
+
+
 
         public Form1()
         {
             InitializeComponent();
+            
         }
 
 
@@ -43,7 +46,62 @@ namespace Slutprojekt___BlackJack
 
             //label1.Text = currentPlayers.DealerHand[0];
             label1.Text = playerHandValue.ToString();
+            //label1.Text = dealerHandValue.ToString();
         }
+
+        //Lås btnStart tills user tbx är skriven i
+        private void TbxUser_TextChanged(object sender, EventArgs e)
+        {
+            btnStartGame.Enabled = true;
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Starta Spel
+        private void BtnStartGame_Click(object sender, EventArgs e)
+        {
+            projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
+
+            //Rensa
+            currentDeck.ClearDeck();
+            playerHandValue = 0;
+            dealerHandValue = 0;
+
+            //Första pictureboxes för motståndare. (Profil, Gömt kort, första kort)
+            if (cbxHard.Checked == true)
+            {
+                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\matt.jpg");
+            }
+            else
+            {
+                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\Opponent.png");
+            }
+
+            //pbxOpponent1.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "gray_back.png");      //
+            //pbxOpponent2.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "red_back.png");       //
+
+
+            //Generera kortlek och blanda 53 platsbyten
+            currentDeck.Generate();
+            currentDeck.Shuffle(52);
+
+            //Dra första två kort åt dealern (Gömt och första) och sätt bilder för korten
+            dealerHiddenCard = currentDeck.PullCard();
+
+            string tempPulledCard = currentDeck.PullCard();
+            currentPlayers.DealerHandAdd(tempPulledCard);
+            dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
+
+            pbxOpponent1.Image = Image.FromFile(projectAddress + "/Cards/gray_back.png");
+            pbxOpponent2.Image = Image.FromFile(projectAddress + "/Cards/red_back.png");
+
+
+            pnlGame.Visible = true;
+            pnlHitStand.Visible = true;
+            pnlYourCards.Visible = true;
+        }
+
+
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Hit och stand
@@ -77,12 +135,8 @@ namespace Slutprojekt___BlackJack
                     justGotAce = true;
                     pnlAceValue.Visible = true;
 
-                    pbxCard1.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + PulledCard + ".png");
+                    pbxCard1.Image = Image.FromFile(projectAddress+ "/Cards/" + PulledCard + ".png");
 
-                    //Olika test
-                    //pbxCard1.Image = Image.FromFile("C:/Users/chrris0223/Source/Repos/Krille002/ProgrammeringKG/Slutprojekt - BlackJack/Slutprojekt - BlackJack/Resources/Cards/" + PulledCard + ".png");
-                    //label1.Text = System.Windows.Forms.Application.StartupPath;
-                    //label1.Text = Environment.CurrentDirectory + "/Cards/" + PulledCard + ".png";
                 }
 
             }   
@@ -161,41 +215,7 @@ namespace Slutprojekt___BlackJack
         }
 
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Starta Spel
-        private void BtnStartGame_Click(object sender, EventArgs e)
-        {
-            //Rensa
-            currentDeck.ClearDeck();
-            playerHandValue = 0;
-            dealerHandValue = 0;
 
-            //Första pictureboxes för motståndare. (Profil, Gömt kort, första kort)
-            if (cbxHard.Checked == true)
-            {
-                pbxOpponent.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "matt.jpg");
-            }
-            else
-            {
-                pbxOpponent.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "Opponent.png");
-            }
-
-            pbxOpponent1.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "gray_back.png");
-            pbxOpponent2.Image = Image.FromFile(Environment.CurrentDirectory + "/Cards/" + "red_back.png");
-
-
-            //Generera kortlek och blanda 53 platsbyten
-            currentDeck.Generate();
-            currentDeck.Shuffle(52);
-
-            //Dra första kort åt dealern
-            dealerHiddenCard = CheckCardValue(currentDeck.PullCard());
-            currentPlayers.DealerHandAdd(currentDeck.PullCard());
-
-            pnlGame.Visible = true;
-            pnlHitStand.Visible = true;
-            pnlYourCards.Visible = true;
-        }
 
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         //Rita ut skärmen
@@ -221,6 +241,7 @@ namespace Slutprojekt___BlackJack
         {
 
         }
+
 
     }
 }

@@ -62,6 +62,8 @@
             this.pnlHitStand = new System.Windows.Forms.Panel();
             this.btnStartGame = new System.Windows.Forms.Button();
             this.cbxHard = new System.Windows.Forms.CheckBox();
+            this.tbxUser = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnlYourCards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).BeginInit();
@@ -448,6 +450,7 @@
             // 
             // btnStartGame
             // 
+            this.btnStartGame.Enabled = false;
             this.btnStartGame.Location = new System.Drawing.Point(17, 86);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(49, 23);
@@ -466,12 +469,31 @@
             this.cbxHard.Text = "Hard";
             this.cbxHard.UseVisualStyleBackColor = true;
             // 
+            // tbxUser
+            // 
+            this.tbxUser.Location = new System.Drawing.Point(5, 189);
+            this.tbxUser.Name = "tbxUser";
+            this.tbxUser.Size = new System.Drawing.Size(61, 20);
+            this.tbxUser.TabIndex = 12;
+            this.tbxUser.TextChanged += new System.EventHandler(this.TbxUser_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 173);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "User:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbxUser);
             this.Controls.Add(this.cbxHard);
             this.Controls.Add(this.pnlAceValue);
             this.Controls.Add(this.btnStartGame);
@@ -549,6 +571,8 @@
         private System.Windows.Forms.Button btnEleven;
         private System.Windows.Forms.Button btnStartGame;
         private System.Windows.Forms.CheckBox cbxHard;
+        private System.Windows.Forms.TextBox tbxUser;
+        private System.Windows.Forms.Label label2;
     }
 }
 
