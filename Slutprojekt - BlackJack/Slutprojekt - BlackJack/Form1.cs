@@ -15,6 +15,10 @@ namespace Slutprojekt___BlackJack
 
         CardDeck currentDeck = new CardDeck();
         Players currentPlayers = new Players();
+        PictureBox[] dealerPictoreboxes = new PictureBox[10];
+        PictureBox[] playerPictureboxes = new PictureBox[10];
+
+
         
         //Medlemsvariabler
             //int
@@ -32,6 +36,7 @@ namespace Slutprojekt___BlackJack
 
         public Form1()
         {
+
             InitializeComponent();
             
         }
@@ -229,10 +234,39 @@ namespace Slutprojekt___BlackJack
 
             g.DrawString(statusString, statusFont, statusPenna, statusPoint);
 
-        
-
-
         }
+
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //Dra kort åt dealer
+        private void DealerTurn()
+        {
+            string tempCard = currentDeck.PullCard();
+            int tempCardValue = CheckCardValue(tempCard);
+            
+            //Om Ess. Ta 11 om resultatet blir under 21, annars ta värde 1
+            if( tempCardValue == 1)
+            {
+                if(dealerHandValue + 11 < 21)
+                {
+                    dealerHandValue = dealerHandValue + 11;
+                }
+                else
+                {
+                    dealerHandValue = dealerHandValue + 1;
+                }
+            }
+            else
+            {
+                dealerHandValue = dealerHandValue + tempCardValue;
+            }
+
+
+
+            
+        }
+
 
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
