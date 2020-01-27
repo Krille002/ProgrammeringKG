@@ -56,8 +56,8 @@ namespace Slutprojekt___BlackJack
             debugInteger++;
 
             //label1.Text = currentPlayers.DealerHand[0];
-            label1.Text = playerHandValue.ToString();
-            //label1.Text = dealerHandValue.ToString();
+            //label1.Text = playerHandValue.ToString();
+            label1.Text = dealerHandValue.ToString();
 
         }
 
@@ -161,6 +161,8 @@ namespace Slutprojekt___BlackJack
                     playerHandValue = playerHandValue + CheckCardValue(pulledCard);
 
                     currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
+
+                    DealerTurn();
                 }
                 
             }
@@ -190,10 +192,10 @@ namespace Slutprojekt___BlackJack
 
             pnlHitStand.Visible = true;
 
-            currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
+            //currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
             //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
-
+            DealerTurn();
         }
 
         private void btnOne_Click(object sender, EventArgs e)
@@ -206,9 +208,10 @@ namespace Slutprojekt___BlackJack
 
             pnlHitStand.Visible = true;
 
-            currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
+            //currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
             //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
+            DealerTurn();
         }
 
 
