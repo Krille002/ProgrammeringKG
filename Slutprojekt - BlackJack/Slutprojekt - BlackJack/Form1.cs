@@ -150,18 +150,19 @@ namespace Slutprojekt___BlackJack
             }   
             else
             {
-                //Addera värde av nytt kort
-                playerHandValue = playerHandValue + CheckCardValue(pulledCard);
+                if (playerHandValue + CheckCardValue(pulledCard) > 21)
+                {
+                    EndGame();
+                }
+                else
+                {
+                    //Addera värde av nytt kort
+                    playerHandValue = playerHandValue + CheckCardValue(pulledCard);
 
-                currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
+                    currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
+                }
                 
             }
-
-
-            //Rita ut kort och poäng till skärm
-            //Hantera ess och gå över 21
-
-
 
         }
 

@@ -474,7 +474,7 @@
             this.tbxUser.Name = "tbxUser";
             this.tbxUser.Size = new System.Drawing.Size(61, 20);
             this.tbxUser.TabIndex = 12;
-            this.tbxUser.Text = "Christian";
+            this.tbxUser.Text = "chrris0223";
             this.tbxUser.TextChanged += new System.EventHandler(this.TbxUser_TextChanged);
             // 
             // label2
