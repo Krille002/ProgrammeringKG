@@ -57,6 +57,7 @@ namespace Slutprojekt___BlackJack
             //label1.Text = currentPlayers.DealerHand[0];
             label1.Text = playerHandValue.ToString();
             //label1.Text = dealerHandValue.ToString();
+
         }
 
         //Lås btnStart tills user tbx är skriven i
@@ -151,6 +152,9 @@ namespace Slutprojekt___BlackJack
             {
                 //Addera värde av nytt kort
                 playerHandValue = playerHandValue + CheckCardValue(pulledCard);
+
+                currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
+                
             }
 
 
@@ -166,9 +170,7 @@ namespace Slutprojekt___BlackJack
         private void BtnStand_Click(object sender, EventArgs e)
         {
             pnlHitStand.Visible = false;
-
-            //Jämföra spelares och Dealers poäng
-            //Bestäm vinnare
+            EndGame();
 
         }
 
@@ -259,13 +261,14 @@ namespace Slutprojekt___BlackJack
         //Dra kort åt dealer
         private void DealerTurn()
         {
+            
             string tempCard = currentDeck.PullCard();
             int tempCardValue = CheckCardValue(tempCard);
             
             //Om Ess. Ta 11 om resultatet blir under 21, annars ta värde 1
-            if( tempCardValue == 1)
+            if(tempCardValue == 1)
             {
-                if(dealerHandValue + 11 < 21)
+                if(dealerHandValue + 11 <= 21)
                 {
                     dealerHandValue = dealerHandValue + 11;
                 }
@@ -290,6 +293,35 @@ namespace Slutprojekt___BlackJack
         //Hantera slutet
         private void EndGame()
         {
+            //Se till att dealer drar kort tills handen är värd mer än 17
+            while(dealerHandValue < 17)
+            {
+                DealerTurn();
+            }
+
+            //Lägga till gömt kort
+            dealerHandValue += CheckCardValue(dealerHiddenCard);
+
+            //Visa alla kort
+
+
+            //Hantera stand och avslut på spelet
+            if(playerHandValue > 21)
+            {
+                statusString = "Dealer wins!";
+                Invalidate();
+            }
+            else if(playerHandValue == dealerHandValue)
+            {
+                statusString = "It's a draw!";
+                Invalidate();
+            }
+            else
+            {
+                statusString = "Player wins!";
+                Invalidate();
+            }
+
 
         }
 

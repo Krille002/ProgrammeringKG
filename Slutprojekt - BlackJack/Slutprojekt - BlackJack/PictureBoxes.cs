@@ -49,6 +49,7 @@ namespace Slutprojekt___BlackJack
         public PictureBox[] PlayerSetPictures(PictureBox[] lista, string card)
         {
             lista[playerPictureBoxIndex].Image = Image.FromFile(projectPath + card + ".png");
+            
 
             playerPictureBoxIndex++;
             return lista;
