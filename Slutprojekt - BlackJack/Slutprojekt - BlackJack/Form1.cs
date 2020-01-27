@@ -16,8 +16,8 @@ namespace Slutprojekt___BlackJack
         CardDeck currentDeck = new CardDeck();
         Players currentPlayers = new Players();
         PictureBoxes currentPictureboxes = new PictureBoxes();
-        public PictureBox[] dealerPictoreboxes = new PictureBox[10];
-        public PictureBox[] playerPictureboxes = new PictureBox[10];
+        public PictureBox[] dealerPictoreboxes;
+        public PictureBox[] playerPictureboxes;
         
 
         //Medlemsvariabler
@@ -43,6 +43,7 @@ namespace Slutprojekt___BlackJack
             InitializeComponent();
             PictureBox[] dealerPictureboxes = { pbxOpponent1, pbxOpponent2, pbxOpponent3, pbxOpponent4, pbxOpponent4, pbxOpponent5, pbxOpponent6, pbxOpponent7, pbxOpponent8, pbxOpponent9, pbxOpponent10 };
             PictureBox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10 };
+
         }
 
 
