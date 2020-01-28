@@ -41,6 +41,7 @@ namespace Slutprojekt___BlackJack
         {
 
             InitializeComponent();
+            Picturebox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10};
            
         }
 
