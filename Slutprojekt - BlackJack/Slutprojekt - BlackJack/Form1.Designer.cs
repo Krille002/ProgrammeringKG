@@ -474,7 +474,7 @@
             this.tbxUser.Name = "tbxUser";
             this.tbxUser.Size = new System.Drawing.Size(61, 20);
             this.tbxUser.TabIndex = 12;
-            this.tbxUser.Text = "Christian";
+            this.tbxUser.Text = "chrris0223";
             this.tbxUser.TextChanged += new System.EventHandler(this.TbxUser_TextChanged);
             // 
             // label2
@@ -504,6 +504,7 @@
             this.Controls.Add(this.pnlYourCards);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlYourCards.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).EndInit();

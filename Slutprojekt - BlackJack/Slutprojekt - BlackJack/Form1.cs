@@ -41,9 +41,7 @@ namespace Slutprojekt___BlackJack
         {
 
             InitializeComponent();
-            PictureBox[] dealerPictureboxes = { pbxOpponent1, pbxOpponent2, pbxOpponent3, pbxOpponent4, pbxOpponent4, pbxOpponent5, pbxOpponent6, pbxOpponent7, pbxOpponent8, pbxOpponent9, pbxOpponent10 };
-            PictureBox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10 };
-
+           
         }
 
 
@@ -92,7 +90,7 @@ namespace Slutprojekt___BlackJack
 
             //Generera kortlek och blanda 53 platsbyten
             currentDeck.Generate();
-            currentDeck.Shuffle(52);
+            currentDeck.Shuffle(104);
 
             //Dra första två kort åt dealern (Gömt och första) och sätt bilder för korten
             dealerHiddenCard = currentDeck.PullCard();
@@ -159,9 +157,9 @@ namespace Slutprojekt___BlackJack
                 {
                     //Addera värde av nytt kort
                     playerHandValue = playerHandValue + CheckCardValue(pulledCard);
-
+                    MessageBox.Show(playerPictureboxes[0].ToString());
                     currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
-
+                    MessageBox.Show(playerPictureboxes[0].ToString());
                     DealerTurn();
                 }
                 
@@ -208,6 +206,7 @@ namespace Slutprojekt___BlackJack
 
             pnlHitStand.Visible = true;
 
+           
             //currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
             //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
@@ -232,10 +231,11 @@ namespace Slutprojekt___BlackJack
             }
             else if (cardString.Length == 3)
             {
-                firstNumberChar = cardString[0];
-                secondNumberChar = cardString[1];
+                //firstNumberChar = cardString[0];
+                //secondNumberChar = cardString[1];
 
-                return int.Parse(firstNumberChar.ToString() + secondNumberChar.ToString());
+                //return int.Parse(firstNumberChar.ToString() + secondNumberChar.ToString());
+                return 10;
             }
             else
             {
@@ -269,26 +269,27 @@ namespace Slutprojekt___BlackJack
             
             string tempCard = currentDeck.PullCard();
             int tempCardValue = CheckCardValue(tempCard);
-            
-            //Om Ess. Ta 11 om resultatet blir under 21, annars ta värde 1
-            if(tempCardValue == 1)
+
+            if(dealerHandValue < 17)
             {
-                if(dealerHandValue + 11 <= 21)
+                //Om Ess. Ta 11 om resultatet blir under 21, annars ta värde 1
+                if (tempCardValue == 1)
                 {
-                    dealerHandValue = dealerHandValue + 11;
+                    if (dealerHandValue + 11 <= 21)
+                    {
+                        dealerHandValue = dealerHandValue + 11;
+                    }
+                    else
+                    {
+                        dealerHandValue = dealerHandValue + 1;
+                    }
                 }
                 else
                 {
-                    dealerHandValue = dealerHandValue + 1;
+
+                    dealerHandValue = dealerHandValue + tempCardValue;
                 }
             }
-            else
-            {
-                dealerHandValue = dealerHandValue + tempCardValue;
-            }
-
-
-
             
         }
 
@@ -321,6 +322,11 @@ namespace Slutprojekt___BlackJack
                 statusString = "It's a draw!";
                 Invalidate();
             }
+            else if(dealerHandValue > playerHandValue && dealerHandValue <= 21)
+            {
+                statusString = "Dealer wins!";
+                Invalidate();
+            }
             else
             {
                 statusString = "Player wins!";
@@ -330,6 +336,11 @@ namespace Slutprojekt___BlackJack
 
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PictureBox[] dealerPictureboxes = { pbxOpponent1, pbxOpponent2, pbxOpponent3, pbxOpponent4, pbxOpponent4, pbxOpponent5, pbxOpponent6, pbxOpponent7, pbxOpponent8, pbxOpponent9, pbxOpponent10 };
+            PictureBox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10 };
 
+        }
     }
 }
