@@ -41,8 +41,9 @@ namespace Slutprojekt___BlackJack
         {
 
             InitializeComponent();
-            Picturebox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10};
-           
+            PictureBox[] dealerPictureboxes = { pbxOpponent1, pbxOpponent2, pbxOpponent3, pbxOpponent4, pbxOpponent4, pbxOpponent5, pbxOpponent6, pbxOpponent7, pbxOpponent8, pbxOpponent9, pbxOpponent10 };
+            PictureBox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10 };
+
         }
 
 
@@ -72,6 +73,9 @@ namespace Slutprojekt___BlackJack
         {
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
             currentPictureboxes.SetPath = projectAddress;
+
+            PictureBox[] dealerPictureboxes = { pbxOpponent1, pbxOpponent2, pbxOpponent3, pbxOpponent4, pbxOpponent4, pbxOpponent5, pbxOpponent6, pbxOpponent7, pbxOpponent8, pbxOpponent9, pbxOpponent10 };
+            PictureBox[] playerPictureboxes = { pbxCard1, pbxCard2, pbxCard3, pbxCard4, pbxCard5, pbxCard6, pbxCard7, pbxCard8, pbxCard9, pbxCard10 };
 
             //Rensa
             currentDeck.ClearDeck();
@@ -191,7 +195,7 @@ namespace Slutprojekt___BlackJack
 
             pnlHitStand.Visible = true;
 
-            //currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
+            currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
             //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
             DealerTurn();
@@ -208,7 +212,7 @@ namespace Slutprojekt___BlackJack
             pnlHitStand.Visible = true;
 
            
-            //currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
+            currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
             //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
             DealerTurn();
