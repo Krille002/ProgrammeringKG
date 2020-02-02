@@ -18,6 +18,7 @@ namespace Slutprojekt___BlackJack
         private string projectPath;
 
 
+
         //Egenskap
         public string SetPath
         {
@@ -35,24 +36,37 @@ namespace Slutprojekt___BlackJack
         //Metoder
 
         //Dealer
-        public PictureBox[] DealerSetPictures(PictureBox[] lista, string card)
+        public void DealerSetBackPictures(PictureBox[] list)
         {
-            lista[dealerPictureBoxIndex - 2].Image = Image.FromFile(projectPath + card + ".png");
+            string redBack = "red_back.png";
 
-            dealerPictureBoxIndex++;
-            return lista;
+            list[dealerPictureBoxIndex].Image = Image.FromFile(projectPath + redBack);
+
         }
 
+        //Show all dealer
+        public void DealerShowCards (PictureBox[] list, List<string> cards)
+        {
+            int i = 0;
+            while(i < list.Length && i <= cards.Count)
+            {
+                list[i].Image = Image.FromFile(projectPath + cards[i] + ".png");
+                i++;
+            }
+
+        }
 
 
         //Player
-        public PictureBox[] PlayerSetPictures(PictureBox[] lista, string card)
+        public PictureBox[] PlayerSetPictures(PictureBox[] list, string card)
         {
-            lista[playerPictureBoxIndex].Image = Image.FromFile(projectPath + card + ".png");
+            list[playerPictureBoxIndex].Image = Image.FromFile(projectPath + card + ".png");
             
 
             playerPictureBoxIndex++;
-            return lista;
+            return list;
         }
+
+
     }
 }
