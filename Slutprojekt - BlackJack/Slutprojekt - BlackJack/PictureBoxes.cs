@@ -48,7 +48,7 @@ namespace Slutprojekt___BlackJack
         public void DealerShowCards (PictureBox[] list, List<string> cards)
         {
             int i = 0;
-            while(i < list.Length && i <= cards.Count)
+            while(i < list.Length && i < cards.Count)
             {
                 list[i].Image = Image.FromFile(projectPath + cards[i] + ".png");
                 i++;

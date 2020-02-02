@@ -325,14 +325,15 @@ namespace Slutprojekt___BlackJack
         private void EndGame()
         {
             pnlHitStand.Visible = false;
-            //Visa dealers kort
-            currentPictureboxes.DealerShowCards(dealerPictoreboxes, dealerHand);
 
             //Se till att dealer drar kort tills handen är värd mer än 17
             while(dealerHandValue < 17)
             {
                 DealerTurn();
             }
+
+            //Visa dealers kort
+            currentPictureboxes.DealerShowCards(dealerPictoreboxes, dealerHand);
 
             //Lägga till gömt kort
             dealerHandValue += CheckCardValue(dealerHiddenCard);
