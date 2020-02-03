@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Slutprojekt___BlackJack
 {
@@ -137,16 +138,24 @@ namespace Slutprojekt___BlackJack
             currentPictureboxes.DealerShowCards(dealerPictureboxes, dealerHand);
             dealerHandValue += CheckCardValue(dealerHiddenCard);
 
+
             //Andra kortet åt dealern
             string tempPulledCard = currentDeck.PullCard();
-            dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
             dealerHand.Add(tempPulledCard);
             currentPictureboxes.DealerSetBackPictures(dealerPictureboxes);
+            dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
 
             //Visa alla paneler
             pnlGame.Visible = true;
             pnlHitStand.Visible = true;
             pnlYourCards.Visible = true;
+
+            Debug.WriteLine(dealerHandValue.ToString());
+
+            for(int i = 0; i < dealerHand.Count; i++)
+            {
+                Debug.WriteLine(dealerHand[i]);
+            }
         }
 
 
@@ -322,11 +331,11 @@ namespace Slutprojekt___BlackJack
                 {
                     if (dealerHandValue + 11 <= 17)
                     {
-                        dealerHandValue = dealerHandValue + 11;
+                        dealerHandValue += 11;
                     }
                     else
                     {
-                        dealerHandValue = dealerHandValue + 1;
+                        dealerHandValue += 1;
                     }
                 }
                 else
@@ -357,9 +366,6 @@ namespace Slutprojekt___BlackJack
 
             //Visa dealers kort
             currentPictureboxes.DealerShowCards(dealerPictureboxes, dealerHand);
-
-            //Lägga till gömt kort
-            dealerHandValue += CheckCardValue(dealerHiddenCard);
 
 
             //Hantera vinnare
