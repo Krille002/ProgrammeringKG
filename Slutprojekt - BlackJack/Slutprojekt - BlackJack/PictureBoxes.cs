@@ -12,7 +12,7 @@ namespace Slutprojekt___BlackJack
 {
     class PictureBoxes
     {
-        private int dealerPictureBoxIndex = 2;
+        private int dealerPictureBoxIndex = 1;
         private int playerPictureBoxIndex = 0;
 
         private string projectPath;

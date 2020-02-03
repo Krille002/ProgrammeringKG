@@ -124,15 +124,17 @@ namespace Slutprojekt___BlackJack
             currentDeck.Shuffle(104);
 
             //Dra första två kort åt dealern (Gömt och första) och sätt bilder för korten
+            //Gömt kort
             dealerHiddenCard = currentDeck.PullCard();
             dealerHand.Add(dealerHiddenCard);
             currentPictureboxes.DealerShowCards(dealerPictoreboxes, dealerHand);
+            dealerHandValue += CheckCardValue(dealerHiddenCard);
 
+            //Andra kort
             string tempPulledCard = currentDeck.PullCard();
             dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
             dealerHand.Add(tempPulledCard);
-
-            pbxOpponent2.Image = Image.FromFile(projectAddress + "/Cards/red_back.png");
+            currentPictureboxes.DealerSetBackPictures(dealerPictoreboxes);
 
 
             pnlGame.Visible = true;
@@ -189,7 +191,7 @@ namespace Slutprojekt___BlackJack
                     //Addera värde av nytt kort
                     playerHandValue = playerHandValue + CheckCardValue(pulledCard);
                     currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
-                    DealerTurn();
+                    //DealerTurn();
                 }
                 
             }
@@ -221,7 +223,7 @@ namespace Slutprojekt___BlackJack
             currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
             //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
-            DealerTurn();
+            //DealerTurn();
         }
 
         private void btnOne_Click(object sender, EventArgs e)
