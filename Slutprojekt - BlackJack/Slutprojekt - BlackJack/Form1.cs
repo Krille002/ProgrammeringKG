@@ -126,12 +126,12 @@ namespace Slutprojekt___BlackJack
             //Dra första två kort åt dealern (Gömt och första) och sätt bilder för korten
             dealerHiddenCard = currentDeck.PullCard();
             dealerHand.Add(dealerHiddenCard);
+            currentPictureboxes.DealerShowCards(dealerPictoreboxes, dealerHand);
 
             string tempPulledCard = currentDeck.PullCard();
             dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
             dealerHand.Add(tempPulledCard);
 
-            pbxOpponent1.Image = Image.FromFile(projectAddress + "/Cards/gray_back.png");
             pbxOpponent2.Image = Image.FromFile(projectAddress + "/Cards/red_back.png");
 
 
@@ -164,6 +164,8 @@ namespace Slutprojekt___BlackJack
                 if (playerHandValue + 1 > 21)
                 {
                     //Avsluta spel om spelaren redan ligger på 21 och alltså går över det med detta kort
+                    playerHandValue += 1;
+                    currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
                     EndGame();
                 }
                 else
@@ -291,10 +293,11 @@ namespace Slutprojekt___BlackJack
             string tempCard = currentDeck.PullCard();
             int tempCardValue = CheckCardValue(tempCard);
 
-            dealerHand.Add(tempCard);
 
             if(dealerHandValue < 17)
             {
+                dealerHand.Add(tempCard);
+
                 //Om Ess. Ta 11 om resultatet blir under eller lika med 17, annars ta värde 1
                 if (tempCardValue == 1)
                 {
@@ -313,6 +316,7 @@ namespace Slutprojekt___BlackJack
                     dealerHandValue = dealerHandValue + tempCardValue;
                 }
             }
+
 
             currentPictureboxes.DealerSetBackPictures(dealerPictoreboxes);
             
