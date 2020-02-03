@@ -19,7 +19,7 @@ namespace Slutprojekt___BlackJack
 
 
 
-        //Egenskap
+        //Egenskap för att sätta filsökväg
         public string SetPath
         {
             get
@@ -35,7 +35,7 @@ namespace Slutprojekt___BlackJack
 
         //Metoder
 
-        //Dealer
+        //Dealer (Sätta bakvända kort)       (Typ legacy)
         public void DealerSetBackPictures(PictureBox[] list)
         {
             string redBack = "red_back.png";
@@ -44,10 +44,12 @@ namespace Slutprojekt___BlackJack
 
         }
 
-        //Show all dealer
+        //Show all dealer (Visar alla dealernas kort)
         public void DealerShowCards (PictureBox[] list, List<string> cards)
         {
             int i = 0;
+
+            //Går igenom listan med dealerns kort och sätter alla bilderna
             while(i < list.Length && i < cards.Count)
             {
                 list[i].Image = Image.FromFile(projectPath + cards[i] + ".png");
@@ -57,7 +59,7 @@ namespace Slutprojekt___BlackJack
         }
 
 
-        //Player
+        //Player         (Sätter spelarens kortbilder)
         public PictureBox[] PlayerSetPictures(PictureBox[] list, string card)
         {
             list[playerPictureBoxIndex].Image = Image.FromFile(projectPath + card + ".png");

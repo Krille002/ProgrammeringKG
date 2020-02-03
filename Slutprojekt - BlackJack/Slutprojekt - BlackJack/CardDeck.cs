@@ -15,26 +15,7 @@ namespace Slutprojekt___BlackJack
         Random Shuffler = new Random();
 
 
-
-        //Egenskap för att testa
-
-        public string First
-        {
-            get
-            {
-                return activeDeck[0];
-            }
-            set
-            {
-                activeDeck.Add(value);
-            }
-        }
-
-
-
-
         //Metoder
-
 
         public string DebugPrint(int i)
         {

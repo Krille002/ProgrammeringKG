@@ -16,7 +16,7 @@ namespace Slutprojekt___BlackJack
         CardDeck currentDeck = new CardDeck();
         PictureBoxes currentPictureboxes;
 
-        public PictureBox[] dealerPictoreboxes = new PictureBox[10];
+        public PictureBox[] dealerPictureboxes = new PictureBox[10];
         public PictureBox[] playerPictureboxes = new PictureBox[10];
         List<string> dealerHand;
         
@@ -42,16 +42,16 @@ namespace Slutprojekt___BlackJack
             InitializeComponent();
 
             //Dealers kortbilder
-            dealerPictoreboxes[0] = pbxOpponent1;
-            dealerPictoreboxes[1] = pbxOpponent2;
-            dealerPictoreboxes[2] = pbxOpponent3;
-            dealerPictoreboxes[3] = pbxOpponent4;
-            dealerPictoreboxes[4] = pbxOpponent5;
-            dealerPictoreboxes[5] = pbxOpponent6;
-            dealerPictoreboxes[6] = pbxOpponent7;
-            dealerPictoreboxes[7] = pbxOpponent8;
-            dealerPictoreboxes[8] = pbxOpponent9;
-            dealerPictoreboxes[9] = pbxOpponent10;
+            dealerPictureboxes[0] = pbxOpponent1;
+            dealerPictureboxes[1] = pbxOpponent2;
+            dealerPictureboxes[2] = pbxOpponent3;
+            dealerPictureboxes[3] = pbxOpponent4;
+            dealerPictureboxes[4] = pbxOpponent5;
+            dealerPictureboxes[5] = pbxOpponent6;
+            dealerPictureboxes[6] = pbxOpponent7;
+            dealerPictureboxes[7] = pbxOpponent8;
+            dealerPictureboxes[8] = pbxOpponent9;
+            dealerPictureboxes[9] = pbxOpponent10;
 
             //Spelares kortbilder
             playerPictureboxes[0] = pbxCard1;
@@ -89,26 +89,32 @@ namespace Slutprojekt___BlackJack
         {
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
 
-            //Rensa
+            //Rensa allt
+
+            //Tar bort ritad text på skärm
             statusString = "";
             Invalidate();
 
+            //Klassen som tar hand om kortbilderna rensas (Och filsökväg uppdateras)
             currentPictureboxes = new PictureBoxes();
             currentPictureboxes.SetPath = projectAddress;
 
+            //Listan med dealers kort rensas
             dealerHand = new List<string>();
 
+            //Rensa kortlek och kort i händer
             currentDeck.ClearDeck();
             playerHandValue = 0;
             dealerHandValue = 0;
 
+            //Rensa pictureboxes när man klickar start igen
             for(int i = 0; i < 10; i++)
             {
                 playerPictureboxes[i].Image = null;
-                dealerPictoreboxes[i].Image = null;
+                dealerPictureboxes[i].Image = null;
             }
 
-            //Första picturebox för motståndare. (Profil, Gömt kort, första kort)
+            //Första picturebox för motståndare. (Profilbild)
             if (cbxHard.Checked == true)
             {
                 pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\matt.jpg");
@@ -123,20 +129,21 @@ namespace Slutprojekt___BlackJack
             currentDeck.Generate();
             currentDeck.Shuffle(104);
 
-            //Dra första två kort åt dealern (Gömt och första) och sätt bilder för korten
+            //Dra första två kort åt dealern (Gömt och första), och sätt bilder för korten
+
             //Gömt kort
             dealerHiddenCard = currentDeck.PullCard();
             dealerHand.Add(dealerHiddenCard);
-            currentPictureboxes.DealerShowCards(dealerPictoreboxes, dealerHand);
+            currentPictureboxes.DealerShowCards(dealerPictureboxes, dealerHand);
             dealerHandValue += CheckCardValue(dealerHiddenCard);
 
-            //Andra kort
+            //Andra kortet åt dealern
             string tempPulledCard = currentDeck.PullCard();
             dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
             dealerHand.Add(tempPulledCard);
-            currentPictureboxes.DealerSetBackPictures(dealerPictoreboxes);
+            currentPictureboxes.DealerSetBackPictures(dealerPictureboxes);
 
-
+            //Visa alla paneler
             pnlGame.Visible = true;
             pnlHitStand.Visible = true;
             pnlYourCards.Visible = true;
@@ -161,6 +168,7 @@ namespace Slutprojekt___BlackJack
             //Räkna ut spelares totala poäng
             if(CheckCardValue(pulledCard) == 1)
             {
+                //Göm panel
                 pnlHitStand.Visible = false;
 
                 if (playerHandValue + 1 > 21)
@@ -176,14 +184,19 @@ namespace Slutprojekt___BlackJack
                     statusString = "You got an Ace! Choose your preferred value:";
                     Invalidate();
                     pnlAceValue.Visible = true;
+
+                    //globalTempCard är en medlemsvariabel så att knapparna "One" och "Eleven" kan använda den nu
                     globalTempCard = pulledCard;
                 }
 
             }   
             else
             {
+                //Går spelare över 21 avslutas spel
                 if (playerHandValue + CheckCardValue(pulledCard) > 21)
                 {
+                    playerHandValue += CheckCardValue(pulledCard);
+                    currentPictureboxes.PlayerSetPictures(playerPictureboxes, pulledCard);
                     EndGame();
                 }
                 else
@@ -202,6 +215,7 @@ namespace Slutprojekt___BlackJack
         //Stand
         private void BtnStand_Click(object sender, EventArgs e)
         {
+            //Avsluta spel
             pnlHitStand.Visible = false;
             EndGame();
 
@@ -213,6 +227,7 @@ namespace Slutprojekt___BlackJack
         //Hantera Ess värde
         private void btnEleven_Click(object sender, EventArgs e)
         {
+            //Göm knappar och text
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 11;
             statusString = "";
@@ -220,14 +235,15 @@ namespace Slutprojekt___BlackJack
 
             pnlHitStand.Visible = true;
 
+            //Lägg till bild av kort
             currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
-            //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
             //DealerTurn();
         }
 
         private void btnOne_Click(object sender, EventArgs e)
         {
+            //Göm knappar och text
             pnlAceValue.Visible = false;
             playerHandValue = playerHandValue + 1;
             statusString = "";
@@ -235,11 +251,10 @@ namespace Slutprojekt___BlackJack
 
             pnlHitStand.Visible = true;
 
-           
+           //Lägg till bild av kort
             currentPictureboxes.PlayerSetPictures(playerPictureboxes, globalTempCard);
-            //pbxCard1.Image = Image.FromFile(projectAddress + "/Cards/" + globalTempCard + ".png");
 
-            DealerTurn();
+            //DealerTurn();
         }
 
 
@@ -277,10 +292,12 @@ namespace Slutprojekt___BlackJack
         {
             Graphics g = e.Graphics;
 
+            //Status text egenskaper
             Brush statusPenna = new SolidBrush(Color.Black);
             Font statusFont = new Font("Arial", 16);
             Point statusPoint = new Point(330, 330);
 
+            //Rita status
             g.DrawString(statusString, statusFont, statusPenna, statusPoint);
 
         }
@@ -295,7 +312,7 @@ namespace Slutprojekt___BlackJack
             string tempCard = currentDeck.PullCard();
             int tempCardValue = CheckCardValue(tempCard);
 
-
+            //Dealer tar kort tills de når minst 17 värde
             if(dealerHandValue < 17)
             {
                 dealerHand.Add(tempCard);
@@ -320,7 +337,7 @@ namespace Slutprojekt___BlackJack
             }
 
 
-            currentPictureboxes.DealerSetBackPictures(dealerPictoreboxes);
+            currentPictureboxes.DealerSetBackPictures(dealerPictureboxes);
             
         }
 
@@ -339,15 +356,13 @@ namespace Slutprojekt___BlackJack
             }
 
             //Visa dealers kort
-            currentPictureboxes.DealerShowCards(dealerPictoreboxes, dealerHand);
+            currentPictureboxes.DealerShowCards(dealerPictureboxes, dealerHand);
 
             //Lägga till gömt kort
             dealerHandValue += CheckCardValue(dealerHiddenCard);
 
-            //Visa alla kort
 
-
-            //Hantera stand och avslut på spelet
+            //Hantera vinnare
             if(playerHandValue > 21)
             {
                 statusString = "Dealer wins!";
