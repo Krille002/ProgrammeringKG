@@ -428,13 +428,25 @@ namespace Slutprojekt___BlackJack
 
         private void BtnNextRound_Click(object sender, EventArgs e)
         {
-            StartGameFunction();
             btnNextRound.Visible = false;
+
+            bet = 0;
+            StartGameFunction();
         }
 
-        private void BetWin()
+        private void BetWin(bool blackjack)
         {
-            int 
+            if (blackjack)
+            {
+                cash += int.Parse(bet * 1.5);
+            }
+            else
+            {
+                cash += bet * 2;
+            }
+
+                //black jack är 1.5 ggr
+                //Vinna är 2ggr
         }
     }
 }
