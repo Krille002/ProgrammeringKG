@@ -8,15 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Slutprojekt___BlackJack
 {
     public partial class Form1 : Form
     {
-
+        //Klasser
         CardDeck currentDeck = new CardDeck();
         PictureBoxes currentPictureboxes;
 
+        //Listor
         public PictureBox[] dealerPictureboxes = new PictureBox[10];
         public PictureBox[] playerPictureboxes = new PictureBox[10];
         List<string> dealerHand;
@@ -27,11 +29,11 @@ namespace Slutprojekt___BlackJack
         int debugInteger = 0;
         int playerHandValue = 0;
         int dealerHandValue = 0;
+        int cash = 1000;
+        int bet;
             //string
         string statusString = "";
-        string dealerHiddenCard;
         string projectAddress;
-
             //Global
         string globalTempCard;
 
@@ -66,6 +68,7 @@ namespace Slutprojekt___BlackJack
             playerPictureboxes[8] = pbxCard9;
             playerPictureboxes[9] = pbxCard10;
 
+            lblCash.Text = cash.ToString();
         }
 
 
@@ -90,7 +93,21 @@ namespace Slutprojekt___BlackJack
         {
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
 
-            //Rensa allt
+            //Första picturebox för motståndare. (Profilbild)
+            if (cbxHard.Checked == true)
+            {
+                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\matt.jpg");
+            }
+            else
+            {
+                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\Opponent.png");
+            }
+
+            StartGameFunction();
+        }
+
+        private void StartGameFunction()
+        {
 
             //Tar bort ritad text på skärm
             statusString = "";
@@ -108,21 +125,23 @@ namespace Slutprojekt___BlackJack
             playerHandValue = 0;
             dealerHandValue = 0;
 
-            //Rensa pictureboxes när man klickar start igen
-            for(int i = 0; i < 10; i++)
+            //Rensa alla kortbilder
+            for (int i = 0; i < 10; i++)
             {
                 playerPictureboxes[i].Image = null;
                 dealerPictureboxes[i].Image = null;
             }
 
-            //Första picturebox för motståndare. (Profilbild)
-            if (cbxHard.Checked == true)
+            //Hantera bet
+            try
             {
-                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\matt.jpg");
+                bet = int.Parse(tbxBet.Text);
+                cash -= bet;
+                lblCash.Text = cash.ToString();
             }
-            else
+            catch
             {
-                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\Opponent.png");
+                MessageBox.Show("Felaktig sats. Kolla om du har tillräckligt med cash!", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -132,33 +151,37 @@ namespace Slutprojekt___BlackJack
 
             //Dra första två kort åt dealern (Gömt och första), och sätt bilder för korten
 
-            //Gömt kort
-            dealerHiddenCard = currentDeck.PullCard();
-            dealerHand.Add(dealerHiddenCard);
+            //Synligt första kort
+            string tempPulledCard;
+            tempPulledCard = currentDeck.PullCard();
+            dealerHand.Add(tempPulledCard);
             currentPictureboxes.DealerShowCards(dealerPictureboxes, dealerHand);
-            dealerHandValue += CheckCardValue(dealerHiddenCard);
+            dealerHandValue += CheckCardValue(tempPulledCard);
 
 
-            //Andra kortet åt dealern
-            string tempPulledCard = currentDeck.PullCard();
+            //Gömt andra kort åt dealern
+            tempPulledCard = currentDeck.PullCard();
             dealerHand.Add(tempPulledCard);
             currentPictureboxes.DealerSetBackPictures(dealerPictureboxes);
             dealerHandValue = dealerHandValue + CheckCardValue(tempPulledCard);
+
+
+            //Dra två kort åt spelare
+
+            for (int i = 0; i < 2; i++)
+            {
+                tempPulledCard = currentDeck.PullCard();
+                playerHandValue += CheckCardValue(tempPulledCard);
+                currentPictureboxes.PlayerSetPictures(playerPictureboxes, tempPulledCard);
+            }
+
 
             //Visa alla paneler
             pnlGame.Visible = true;
             pnlHitStand.Visible = true;
             pnlYourCards.Visible = true;
 
-            Debug.WriteLine(dealerHandValue.ToString());
-
-            for(int i = 0; i < dealerHand.Count; i++)
-            {
-                Debug.WriteLine(dealerHand[i]);
-            }
         }
-
-
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -347,6 +370,7 @@ namespace Slutprojekt___BlackJack
 
 
             currentPictureboxes.DealerSetBackPictures(dealerPictureboxes);
+            btnNextRound.Visible = true;
             
         }
 
@@ -369,29 +393,48 @@ namespace Slutprojekt___BlackJack
 
 
             //Hantera vinnare
-            if(playerHandValue > 21)
+            if(playerHandValue == 21 && playerHandValue != dealerHandValue)
+            {
+                statusString = "Blackjack!";
+                Invalidate();
+            }
+            else if(playerHandValue > 21)
             {
                 statusString = "Dealer wins!";
                 Invalidate();
+
             }
             else if(playerHandValue == dealerHandValue)
             {
                 statusString = "It's a draw!";
                 Invalidate();
+
             }
             else if(dealerHandValue > playerHandValue && dealerHandValue <= 21)
             {
                 statusString = "Dealer wins!";
                 Invalidate();
+
             }
             else
             {
                 statusString = "Player wins!";
                 Invalidate();
+
             }
 
-
+            
         }
 
+        private void BtnNextRound_Click(object sender, EventArgs e)
+        {
+            StartGameFunction();
+            btnNextRound.Visible = false;
+        }
+
+        private void BetWin()
+        {
+            int 
+        }
     }
 }
