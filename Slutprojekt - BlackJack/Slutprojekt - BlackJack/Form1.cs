@@ -397,6 +397,9 @@ namespace Slutprojekt___BlackJack
             {
                 statusString = "Blackjack!";
                 Invalidate();
+
+                //Vann med blackjack
+                BetWin(true);
             }
             else if(playerHandValue > 21)
             {
@@ -409,6 +412,9 @@ namespace Slutprojekt___BlackJack
                 statusString = "It's a draw!";
                 Invalidate();
 
+                cash = bet;
+                bet = 0;
+
             }
             else if(dealerHandValue > playerHandValue && dealerHandValue <= 21)
             {
@@ -420,6 +426,9 @@ namespace Slutprojekt___BlackJack
             {
                 statusString = "Player wins!";
                 Invalidate();
+
+                //Vann, men inte blackjack
+                BetWin(false);
 
             }
 
@@ -438,15 +447,13 @@ namespace Slutprojekt___BlackJack
         {
             if (blackjack)
             {
-                cash += int.Parse(bet * 1.5);
+                cash += (int)(bet * 1.5);
             }
             else
             {
                 cash += bet * 2;
             }
 
-                //black jack är 1.5 ggr
-                //Vinna är 2ggr
         }
     }
 }
