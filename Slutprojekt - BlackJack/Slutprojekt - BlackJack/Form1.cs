@@ -31,6 +31,7 @@ namespace Slutprojekt___BlackJack
         int dealerHandValue = 0;
         int cash = 1000;
         int bet;
+        int matchCount = 1;
             //string
         string statusString = "";
         string projectAddress;
@@ -93,17 +94,25 @@ namespace Slutprojekt___BlackJack
         {
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
 
-            //Första picturebox för motståndare. (Profilbild)
-            if (cbxHard.Checked == true)
+            try
             {
-                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\matt.jpg");
+                //Första picturebox för motståndare. (Profilbild)
+                if (cbxHard.Checked == true)
+                {
+                    pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\matt.jpg");
+                }
+                else
+                {
+                    pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\Opponent.png");
+                }
+
+                StartGameFunction();
             }
-            else
+            catch
             {
-                pbxOpponent.Image = Image.FromFile(projectAddress + @"\Cards\Opponent.png");
+                MessageBox.Show("Did you specify the correct user?", "Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            StartGameFunction();
         }
 
         private void StartGameFunction()
@@ -141,7 +150,8 @@ namespace Slutprojekt___BlackJack
             }
             catch
             {
-                MessageBox.Show("Felaktig sats. Kolla om du har tillräckligt med cash!", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bet = 0;
+                MessageBox.Show("Felaktig satsning. Du satsar $0 denna rundan", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -370,7 +380,7 @@ namespace Slutprojekt___BlackJack
 
 
             currentPictureboxes.DealerSetBackPictures(dealerPictureboxes);
-            btnNextRound.Visible = true;
+
             
         }
 
@@ -400,12 +410,14 @@ namespace Slutprojekt___BlackJack
 
                 //Vann med blackjack
                 BetWin(true);
+                HistoryAppend("win");
             }
             else if(playerHandValue > 21)
             {
                 statusString = "Dealer wins!";
                 Invalidate();
 
+                HistoryAppend("lose");
             }
             else if(playerHandValue == dealerHandValue)
             {
@@ -415,12 +427,14 @@ namespace Slutprojekt___BlackJack
                 cash = bet;
                 bet = 0;
 
+                HistoryAppend("draw");
             }
             else if(dealerHandValue > playerHandValue && dealerHandValue <= 21)
             {
                 statusString = "Dealer wins!";
                 Invalidate();
 
+                HistoryAppend("lose");
             }
             else
             {
@@ -429,20 +443,13 @@ namespace Slutprojekt___BlackJack
 
                 //Vann, men inte blackjack
                 BetWin(false);
-
+                HistoryAppend("win");
             }
 
-            
+            btnNextRound.Visible = true;
         }
 
-        private void BtnNextRound_Click(object sender, EventArgs e)
-        {
-            btnNextRound.Visible = false;
-
-            bet = 0;
-            StartGameFunction();
-        }
-
+        //Kolla hur spelaren vann, och hantera payout
         private void BetWin(bool blackjack)
         {
             if (blackjack)
@@ -454,6 +461,44 @@ namespace Slutprojekt___BlackJack
                 cash += bet * 2;
             }
 
+            lblCash.Text = cash.ToString();
+        }
+
+        //Starta ny runda
+        private void BtnNextRound_Click(object sender, EventArgs e)
+        {
+            btnNextRound.Visible = false;
+
+            bet = 0;
+            StartGameFunction();
+        }
+
+
+        //Satsning måste bestämmas innan spelaren ska få starta spelet
+        private void TbxBet_TextChanged(object sender, EventArgs e)
+        {
+            btnStartGame.Enabled = true;
+        }
+
+        //Lägga till vinster/förluster i historiken
+        private void HistoryAppend(string matchConclusion)
+        {
+            tbxHistory.Visible = true;
+
+            switch (matchConclusion)
+            {
+                case "win":
+                    tbxHistory.AppendText(matchCount + ".\t" + "Player Won! \r\n");
+                    break;
+                case "lose":
+                    tbxHistory.AppendText(matchCount + ".\t" + "Dealer Won! \r\n");
+                    break;
+                case "draw":
+                    tbxHistory.AppendText(matchCount + ".\t" + "Draw! \r\n");
+                    break;
+            }
+
+            matchCount++;
         }
     }
 }

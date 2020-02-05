@@ -69,6 +69,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblCash = new System.Windows.Forms.Label();
             this.lblBet = new System.Windows.Forms.Label();
+            this.tbxHistory = new System.Windows.Forms.TextBox();
             this.pnlYourCards.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCard2)).BeginInit();
@@ -456,6 +457,7 @@
             // 
             // btnStartGame
             // 
+            this.btnStartGame.Enabled = false;
             this.btnStartGame.Location = new System.Drawing.Point(17, 46);
             this.btnStartGame.Name = "btnStartGame";
             this.btnStartGame.Size = new System.Drawing.Size(49, 23);
@@ -480,7 +482,7 @@
             this.tbxUser.Name = "tbxUser";
             this.tbxUser.Size = new System.Drawing.Size(61, 20);
             this.tbxUser.TabIndex = 12;
-            this.tbxUser.Text = "chrris0223";
+            this.tbxUser.Text = "Christian";
             // 
             // label2
             // 
@@ -508,6 +510,7 @@
             this.tbxBet.Name = "tbxBet";
             this.tbxBet.Size = new System.Drawing.Size(100, 20);
             this.tbxBet.TabIndex = 15;
+            this.tbxBet.TextChanged += new System.EventHandler(this.TbxBet_TextChanged);
             // 
             // label3
             // 
@@ -541,12 +544,24 @@
             this.lblBet.TabIndex = 18;
             this.lblBet.Text = "Your Bet:";
             // 
+            // tbxHistory
+            // 
+            this.tbxHistory.Location = new System.Drawing.Point(1023, 6);
+            this.tbxHistory.Multiline = true;
+            this.tbxHistory.Name = "tbxHistory";
+            this.tbxHistory.ReadOnly = true;
+            this.tbxHistory.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxHistory.Size = new System.Drawing.Size(149, 368);
+            this.tbxHistory.TabIndex = 19;
+            this.tbxHistory.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.tbxHistory);
             this.Controls.Add(this.lblBet);
             this.Controls.Add(this.lblCash);
             this.Controls.Add(this.label3);
@@ -638,6 +653,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblCash;
         private System.Windows.Forms.Label lblBet;
+        private System.Windows.Forms.TextBox tbxHistory;
     }
 }
 
