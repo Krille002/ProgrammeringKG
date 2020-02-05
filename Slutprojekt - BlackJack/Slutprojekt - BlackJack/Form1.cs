@@ -498,6 +498,7 @@ namespace Slutprojekt___BlackJack
                     break;
             }
 
+            lblCash.Text = cash.ToString();
             matchCount++;
         }
     }
