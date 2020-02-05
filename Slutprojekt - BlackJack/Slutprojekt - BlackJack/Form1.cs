@@ -69,7 +69,7 @@ namespace Slutprojekt___BlackJack
             playerPictureboxes[8] = pbxCard9;
             playerPictureboxes[9] = pbxCard10;
 
-            lblCash.Text = cash.ToString();
+            lblCash.Text = "$" + cash.ToString();
         }
 
 
@@ -146,7 +146,7 @@ namespace Slutprojekt___BlackJack
             {
                 bet = int.Parse(tbxBet.Text);
                 cash -= bet;
-                lblCash.Text = cash.ToString();
+                lblCash.Text = "$" + cash.ToString();
             }
             catch
             {
@@ -424,8 +424,9 @@ namespace Slutprojekt___BlackJack
                 statusString = "It's a draw!";
                 Invalidate();
 
-                cash = bet;
+                cash += bet;
                 bet = 0;
+                lblCash.Text = "$" + cash.ToString();
 
                 HistoryAppend("draw");
             }
@@ -461,7 +462,7 @@ namespace Slutprojekt___BlackJack
                 cash += bet * 2;
             }
 
-            lblCash.Text = cash.ToString();
+            lblCash.Text = "$" + cash.ToString();
         }
 
         //Starta ny runda
@@ -498,7 +499,7 @@ namespace Slutprojekt___BlackJack
                     break;
             }
 
-            lblCash.Text = cash.ToString();
+            lblCash.Text = "$" + cash.ToString();
             matchCount++;
         }
     }
