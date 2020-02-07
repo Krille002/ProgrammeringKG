@@ -92,6 +92,10 @@ namespace Slutprojekt___BlackJack
         //Starta Spel
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
+            btnNextRound.Enabled = true;
+            pnlGame.Enabled = true;
+            pnlHitStand.Enabled = true;
+
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
 
             try
@@ -151,7 +155,8 @@ namespace Slutprojekt___BlackJack
             catch
             {
                 bet = 0;
-                MessageBox.Show("Felaktig satsning. Du satsar $0 denna rundan", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Felaktig satsning", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
 
@@ -448,6 +453,7 @@ namespace Slutprojekt___BlackJack
             }
 
             btnNextRound.Visible = true;
+
         }
 
         //Kolla hur spelaren vann, och hantera payout
@@ -502,5 +508,6 @@ namespace Slutprojekt___BlackJack
             lblCash.Text = "$" + cash.ToString();
             matchCount++;
         }
+
     }
 }
