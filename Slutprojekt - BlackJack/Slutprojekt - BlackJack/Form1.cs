@@ -92,9 +92,8 @@ namespace Slutprojekt___BlackJack
         //Starta Spel
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
-            btnNextRound.Enabled = true;
-            pnlGame.Enabled = true;
-            pnlHitStand.Enabled = true;
+            cash = 1000;
+            lblCash.Text = "$" + cash.ToString();
 
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
 
