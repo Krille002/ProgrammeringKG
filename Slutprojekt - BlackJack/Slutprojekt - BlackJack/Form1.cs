@@ -31,8 +31,8 @@ namespace Slutprojekt___BlackJack
         int dealerHandValue = 0;
         int cash = 1000;
         int bet;
-        int matchCount = 1;
-        int gameCounter = 0;
+        int matchCount;
+        int gameCounter = 1;
             //string
         string statusString = "";
         string projectAddress;
@@ -97,6 +97,9 @@ namespace Slutprojekt___BlackJack
             cash = 1000;
             lblCash.Text = "$" + cash.ToString();
 
+            //Återställ matchCount till historik
+            matchCount = 1;
+
             projectAddress = @"C:\Users\" + tbxUser.Text + @"\source\repos\Krille002\ProgrammeringKG\Slutprojekt - BlackJack\Slutprojekt - BlackJack";
 
             try
@@ -118,6 +121,9 @@ namespace Slutprojekt___BlackJack
                 MessageBox.Show("Did you specify the correct user?", "Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            tbxHistory.AppendText("======Game " + gameCounter + "======\r\n");
+            gameCounter++;
+            
         }
 
         private void StartGameFunction()
