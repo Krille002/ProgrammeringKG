@@ -32,6 +32,7 @@ namespace Slutprojekt___BlackJack
         int cash = 1000;
         int bet;
         int matchCount = 1;
+        int gameCounter = 0;
             //string
         string statusString = "";
         string projectAddress;
@@ -92,6 +93,7 @@ namespace Slutprojekt___BlackJack
         //Starta Spel
         private void BtnStartGame_Click(object sender, EventArgs e)
         {
+            //Återställ pengar
             cash = 1000;
             lblCash.Text = "$" + cash.ToString();
 
@@ -144,10 +146,28 @@ namespace Slutprojekt___BlackJack
                 dealerPictureboxes[i].Image = null;
             }
 
-            //Hantera bet
+            //Om spelare inte har kvar pengar ska de inte kunna spela
+            if(cash <= 0)
+            {
+                statusString = "No Cash Left!";
+                Invalidate();
+                pnlHitStand.Visible = false;
+                btnNextRound.Visible = false;
+
+                return;
+            }
+
+            //Hantera felaktiga satsningar
             try
             {
                 bet = int.Parse(tbxBet.Text);
+
+                if(cash - bet < 0 || bet < 0)     //Tillåt inte negativa satsningar, eller satsningar större än cash värde
+                {
+                    //Skapa fel med mening för att trigga catch-block
+                    throw new Exception("Invalid Bet");
+                }
+
                 cash -= bet;
                 lblCash.Text = "$" + cash.ToString();
             }
@@ -155,6 +175,8 @@ namespace Slutprojekt___BlackJack
             {
                 bet = 0;
                 MessageBox.Show("Felaktig satsning", "Inmatningsfel", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                //Hoppa ut ur metod
                 return;
             }
 
