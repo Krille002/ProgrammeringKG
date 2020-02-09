@@ -118,7 +118,7 @@ namespace Slutprojekt___BlackJack
             }
             catch
             {
-                MessageBox.Show("Did you specify the correct user?", "Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Could not find windows user folder with that name", "Startup Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             tbxHistory.AppendText("======Game " + gameCounter + "======\r\n");
